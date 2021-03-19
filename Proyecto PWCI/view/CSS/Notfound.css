@@ -1,0 +1,171 @@
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: l;
+    }
+}
+
+* {
+
+  
+}
+
+.body {
+
+}
+
+.titulo {
+    color: white;
+}
+
+
+.navbar2 {
+
+
+    height: 45px;
+
+}
+
+.navbar {
+
+    background:transparent;
+   
+    transition: all .5s ease;
+
+}
+
+.navbar2.deslizar {
+    padding-top: 20px;
+    transition: all 1s ease;
+    height: 60px;
+    top: 45px;
+
+}
+
+
+.navbar.transicion {
+
+    background-color: rgb(39, 38, 38);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.abierto {
+
+    background-color: rgb(39, 38, 38);
+
+}
+
+.inicio {
+
+   
+    background: linear-gradient(90deg, rgba(49,92,101,1) 9%, rgba(50,38,38,1) 100%);
+}
+
+.inicio-text h1 {
+    font-size: 20px;
+    color: white;
+
+}
+
+.inicio-text p {
+
+    color: white;
+
+}
+
+.botonR {}
+
+.row-inicio {
+
+    padding-top: 5px;
+
+
+
+}
+
+.carousel-item img {
+
+    max-width: 450px;
+
+}
+
+.cursos {
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.division1 {
+
+    margin-top: 20px;
+    padding-top: 1px;
+}
+
+
+
+
+.medio {
+
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.button {
+    border-radius: 4px;
+    background-color: black;
+    border: none;
+    color: #FFFFFF;
+  
+    font-size: 28px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.modalon {
+
+    background: rgb(49, 92, 101);
+    background: linear-gradient(90deg, rgba(49, 92, 101, .3) 9%, rgba(50, 38, 38, .5) 100%);
+
+}
+
+.modalon2 {
+    color: white;
+    background-color: black !important;
+    background: linear-gradient(90deg, rgba(49, 92, 101, .9) 9%, rgba(50, 38, 38, .7) 100%) !important;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+}
