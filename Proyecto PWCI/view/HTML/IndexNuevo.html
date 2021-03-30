@@ -24,14 +24,14 @@
   <div class="d-flex mamando ">
     <nav class="navbar navbar2 navbar-light bg-light fixed-top">
 
-        <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Diseño web</a>
-        <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Programacion</a>
-        <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">C</a>
-        <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-        <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-        <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
+      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Diseño web</a>
+      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Programacion</a>
+      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">C</a>
+      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
+      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
+      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
     </nav>
-</div>
+  </div>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="namep">
       <img class="imageno m-0 pb-1" src="../IMG/C.png" width="35px">
@@ -343,9 +343,8 @@
     </div>
   </div>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
@@ -355,5 +354,29 @@
   <!-- Optional JavaScript -->
   <script src="../JS/IndexNuevo.js"></script>
 </body>
+<script>
+$(document).ready(function(){
+
+  $.ajax({
+    url: "../../controllers/getusers.php",
+    type: "POST",
+    dataType: "json",
+    async: true,
+
+  }).done(function (data) {
+    alert("regresa: " + data);
+  }).fail(function (xhr, status, error) {
+    alert("Error: " + xhr.statusText + xhr.responseText);
+
+  });
+
+
+
+
+
+});
+  
+
+</script>
 
 </html>
