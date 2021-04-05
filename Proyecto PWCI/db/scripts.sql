@@ -1,16 +1,19 @@
-CREATE DATABASE IF NOT EXISTS capadb;
-USE capadb;
+/*CREATE DATABASE IF NOT EXISTS capadb;
+USE capadb;*/
 
 CREATE TABLE `usuario` (
 `id` INT NOT NULL AUTO_INCREMENT,
+`usuario` VARCHAR(50) NOT NULL,
 `usuario_escuela` BOOL NOT NULL,
-`nombre` TEXT(50) NOT NULL,
-`apellidos` TEXT(50) NOT NULL,
+`nombre` TEXT(50) NULL,
+`apellidos` TEXT(50) NULL,
 `correo` TEXT(50) NOT NULL,
 `contra` TEXT(50) NOT NULL,
-`avatar` BLOB NOT NULL,
+`avatar` BLOB NULL,
 PRIMARY KEY(`id`)
 );
+
+
 
 CREATE TABLE `curso`(
 `id` INT NOT NULL AUTO_INCREMENT,
@@ -21,6 +24,14 @@ CREATE TABLE `curso`(
 PRIMARY KEY(`id`)
 );
 
+
+CREATE TABLE `categoria`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`categoria` TEXT(50) NOT NULL,
+PRIMARY KEY (`id`)
+);
+
+
 CREATE TABLE `subCategoria`(
 `id` INT NOT NULL AUTO_INCREMENT,
 `categoriaNombre` TEXT(50),
@@ -29,17 +40,11 @@ FOREIGN KEY(`id`) REFERENCES `categoria`(`id`),
 PRIMARY KEY(`id`)
 );
 
-CREATE TABLE `categoria`(
-`id` INT NOT NULL AUTO_INCREMENT,
-`categoria` TEXT(50) NOT NULL,
-PRIMARY KEY (`id`)
-);
-
 CREATE TABLE `categoriaCurso`(
 `id` INT NOT NULL AUTO_INCREMENT,
 `categoria` INT NOT NULL,
 `curso` INT NOT NULL,
-FOREIGN KEY (`categoria`) REFERENCES `subcategoria`(`id`),
+FOREIGN KEY (`categoria`) REFERENCES `subCategoria`(`id`),
 FOREIGN KEY (`curso`) REFERENCES `curso`(`id`),
 PRIMARY KEY(`id`)
 );
@@ -74,7 +79,7 @@ PRIMARY KEY (`id`)
 CREATE TABLE `comentarioCurso`(
 `id` INT NOT NULL AUTO_INCREMENT,
 `comentario` TEXT(250) NOT NULL,
-`usaurio` INT NOT NULL,
+`usuario` INT NOT NULL,
 `curso` INT NOT NULL,
 FOREIGN KEY (`usuario`) REFERENCES `usuario`(`id`),
 FOREIGN KEY (`curso`) REFERENCES `curso`(`id`),
