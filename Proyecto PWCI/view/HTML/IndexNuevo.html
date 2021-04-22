@@ -261,18 +261,18 @@
             </div>
 
 
-            <form>
+            <form id="rertol" accept-charset="utf-8">
               <div class="form-group pl-5 pr-5">
                 <a>Correo electronico</a>
-                <input type="email" class="form-control" id="email1" placeholder="Ingresa tu correo electronico">
+                <input type="email" class="form-control" id="emaili" name="emaill" placeholder="Ingresa tu correo electronico">
               </div>
               <div class="form-group pl-5 pr-5">
                 <a>Contraseña</a>
-                <input type="password" class="form-control" id="password1" placeholder="Ingresa tu contraseña">
+                <input type="password" class="form-control" id="passwordi" name="passwordl" placeholder="Ingresa tu contraseña">
               </div>
-              <div class="grupo text-center pt-3">
-                <button type="button" class="btn btn-primary btn-md ">Inicia sesion</button>
-              </div>
+           
+                <button type="submit" class="btn btn-primary btn-md d-block mx-auto">Inicia sesion</button>
+              
             </form>
 
 
@@ -308,23 +308,41 @@
             <div class="form-title text-center">
               <h4>Crea una cuenta.</h4>
             </div>
-            <form>
+            <form id="rerto" accept-charset="utf-8"> 
               <div class="form-group pl-5 pr-5">
                 <a>Nombre completo</a>
-                <input type="text" class="form-control" id="text" placeholder="Escribe tu nombre">
+                <input type="text" class="form-control" name="nombresign" id="nombrer" placeholder="Escribe tu nombre">
               </div>
               <div class="form-group pl-5 pr-5">
                 <a>Correo electronico</a>
-                <input type="email" class="form-control" id="email1" placeholder="Ingresa tu correo">
+                <input type="email" class="form-control" name="correosign" id="emailr" placeholder="Ingresa tu correo">
               </div>
               <div class="form-group pl-5 pr-5">
                 <a>Contraseña</a>
-                <input type="password" class="form-control" id="password1" placeholder="Ingresa tu contraseña">
+                <input type="password" class="form-control" name="contraseñasign" id="passwordr"
+                  placeholder="Ingresa tu contraseña">
               </div>
-              <div class="grupo text-center pt-3">
-                <button type="button" class="btn btn-primary btn-md ">Registrate</button>
+              <div class="row justify-content-center">
+                <div class="form-check pl-4">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="false">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                   Estudiante
+                  </label>
+                </div>
+                <div class="form-check pr-4 " style="margin-left: 40px !important;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="true" checked >
+                  <label class="form-check-label" for="flexRadioDefault2">
+                   Profesor
+                  </label>
+                </div>
               </div>
+
+              
+                <button type="sumbit" class="btn btn-primary btn-md d-block mx-auto">Registrate</button>
+              
+             
             </form>
+
             <div class="text-center text-muted delimiter pt-2">or use a social network</div>
             <div class="text-center pt-3">
               <a class="text-muted text-hover-primary " href="#" target="_blank" title="instagram">
@@ -341,7 +359,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -353,30 +371,8 @@
     </script>
   <!-- Optional JavaScript -->
   <script src="../JS/IndexNuevo.js"></script>
+  <script src="../JS/Modelos/models.js"></script>
 </body>
-<script>
-$(document).ready(function(){
 
-  $.ajax({
-    url: "../../controllers/getusers.php",
-    type: "POST",
-    dataType: "json",
-    async: true,
-
-  }).done(function (data) {
-    alert("regresa: " + data);
-  }).fail(function (xhr, status, error) {
-    alert("Error: " + xhr.statusText + xhr.responseText);
-
-  });
-
-
-
-
-
-});
-  
-
-</script>
 
 </html>
