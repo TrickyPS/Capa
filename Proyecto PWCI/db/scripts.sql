@@ -3,10 +3,9 @@ USE capadb;*/
 
 CREATE TABLE `usuario` (
 `id` INT NOT NULL AUTO_INCREMENT,
-`usuario` VARCHAR(50) NOT NULL,
+`apellido` VARCHAR(50) NOT NULL,
 `usuario_escuela` BOOL NOT NULL,
 `nombre` TEXT(50) NULL,
-`apellidos` TEXT(50) NULL,
 `correo` TEXT(50) NOT NULL,
 `contra` TEXT(50) NOT NULL,
 `avatar` BLOB NULL,

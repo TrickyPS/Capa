@@ -8,8 +8,8 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <!--  Link de css -->
-    <link rel="stylesheet" href="/CSS/Video.css">
-    <link rel="stylesheet" href="/CSS/cms.css">
+    <link rel="stylesheet" href="../CSS/Video.css">
+    <link rel="stylesheet" href="../CSS/cms.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -35,7 +35,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="namep">
-            <img class="imageno m-0 pb-1" src="/IMG/C.png" width="35px">
+            <img class="imageno m-0 pb-1" src="../IMG/C.png" width="35px">
             <a class="navbar-brand titulo" href="IndexNuevo.html">Creative Studios</a>
         </div>
         <button id="botonazo" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -88,30 +88,30 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item h5">Curso 1
-                    <a href="" class="btn btn-secondary float-right">
+                    <button class="btn btn-second float-right">
                         <i class="fas fa-pen"></i>
-                    </a>
+                    </button>
                 </li>
                 <li class="list-group-item h5">Curso 2
-                    <a href="" class="btn btn-secondary float-right">
+                    <button class="btn btn-second float-right">
                         <i class="fas fa-pen"></i>
-                    </a>
+                    </button>
                 </li>
                 <li class="list-group-item h5">Curso 3
-                    <a href="" class="btn btn-secondary float-right">
+                    <button class="btn btn-second float-right">
                         <i class="fas fa-pen"></i>
-                    </a>
+                    </button>
                 </li>
 
             </ul>
-            <a class=" m-1  float-right text-primary">Ver todos</a>
-            <h1 class="mt-4 mb-4">Agregar curso</h1>
-            <div class="form-row mt-2 mb-5">
+            <a class="ver_todos m-1  d-block mt-3 mb-3 text-right font-weight-bold text-primary">Ver todos</a>
+            
+            <div class="row ">
                 <div class="col-8">
-                    <input type="text" class="form-control " placeholder="Nombre del curso">
+                   
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-dark w-100">Agregar</button>
+                    <button class="btn btn-main w-100"  data-toggle="modal" data-target="#ModalAddCurso"><i class="fas fa-plus mr-2"></i>Agregar Curso</button>
                 </div>
             </div>
             <h1 class="mt-4 mb-4">Niveles</h1>
@@ -120,7 +120,7 @@
                     <input type="text" placeholder="Nombre del nivel" class="form-control">
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-dark w-100">Agregar</button>
+                    <button class="btn btn-main w-100"> <i class="fas fa-plus mr-2"></i>Agregar Nivel</button>
                 </div>
             </div>
             <div class="form-row mt-2 mb-2">
@@ -133,13 +133,13 @@
                     </div>
                 </div>
                 <div class="col-2 ">
-                    <button class="btn btn-dark w-100 h-100">Agregar video</button>
+                    <button class="btn btn-main  w-100 h-100"> <i class="fas fa-plus mr-2"></i>Agregar video</button>
                 </div>
                 <div class="col-2 ">
-                    <button class="btn btn-dark w-100 h-100">Editar</button>
+                    <button class="btn btn-main w-100 h-100"><i class="fas fa-pen mr-2"></i>Editar</button>
                 </div>
                 <div class="col-2 ">
-                    <button class="btn btn-dark w-100 h-100">Eliminar</button>
+                    <button class="btn btn-main w-100 h-100"><i class="fas fa-trash mr-2"></i>Eliminar</button>
                 </div>
             </div>
 
@@ -399,6 +399,45 @@
             </div>
         </div>
     </div>
+<!--Modal curso-->
+<div class="modal fade" id="ModalAddCurso" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+        <div class="modal-body">
+            
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                
+            
+        </div>
+        <div class="modal-footer">
+          
+          <button type="submit" class="btn btn-main">Agregar</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -410,8 +449,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
         </script>
     <!-- Optional JavaScript -->
-    <script src="/JS/Video.js"></script>
-    <script src="/JS/perfilrandom.js"></script>
+    <script src="../JS/Video.js"></script>
+    <script src="../JS/perfilrandom.js"></script>
 </body>
 
 </html>
