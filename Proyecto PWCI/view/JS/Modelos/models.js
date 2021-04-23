@@ -9,7 +9,12 @@ var iniciasesion = function(correo, contraseña) {
 	this.correo = correo;
 	this.contraseña = contraseña;
 };
-var usuario = function () {
+var Usuario = function (id,nombre,correo,contra,estudiante,avatar) {
 
-
+	this.id = id;
+	this.nombre = nombre;
+	this.correo = correo;
+	this.contra = contra;
+	this.estudiante = estudiante;
+	this.avatar = avatar;
   }

@@ -9,6 +9,7 @@ private $nombre;
 private $contra;
 private $correo;
 private $clase;
+private $avater;
 
 
 
@@ -20,12 +21,33 @@ public function __construct($nombre,$contra,$correo,$clase){
         $this->clase =$clase;
         }
 
+
+public static function updatePerfil ($id,$nombre,$contra,$correo,$avatar){
+        $user = null;
+        $db=Connection::connect();
+        $consulta =$db->query("CALL SP_UpdatePerfil(".$id.",'".$nombre."','".$correo."','".$contra."','".$avatar."')");
+        
+        if($consulta != null){
+
+               // while($row = $consulta->fetch_assoc()) {
+
+                //  $user[]=$row;
+
+               // }
+               $row = mysqli_fetch_array($consulta);
+               
+                return $row; 
+        }
+              else{
+                echo('no funciono');
+              }
+        Connection::disconnect($db);
+     
+         }
+
         
 
 public function Registra(){
-
-
-     /*    echo($this->nombre.$this->contra.$this->correo); */
      
         $this->db->query("CALL SP_AltaUsuario('".$this->nombre."','".$this->contra."','".$this->correo."',".$this->clase.")");
         Connection::disconnect($this->db);
@@ -34,13 +56,12 @@ public function Registra(){
 
 
 
-
   
   
   
   
   
-                  }
+ }
 
 
 

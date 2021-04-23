@@ -106,7 +106,7 @@ $(document).ready(function(){
 
     $("#rertol").on("submit", function (e) {
              
-        debugger
+        
             e.preventDefault(); // avoid to execute the actual submit of the form.
         
             var form = $(this);
@@ -114,7 +114,7 @@ $(document).ready(function(){
             var url = form.attr('action');
 
         
-             debugger
+             
              $.ajax({
                type: "POST",
                url: "../../Controllers/iniciasesion.php",
@@ -124,7 +124,10 @@ $(document).ready(function(){
                {
                 var json = jQuery.parseJSON(data);
                // console.log(json[0]);
-               
+               var resp = json[0];
+                var usuario = new Usuario(resp.id,resp.nombre,resp.correo,resp.contra,resp.usuario_escuela,resp.avatar);
+                sessionStorage.setItem("user", JSON.stringify(usuario));
+                debugger;
                 $("#sesionperfil").append(json[0].nombre); 
                 $("#sesionregistrate").hide(); 
                 $("#sesioninicia").hide(); 

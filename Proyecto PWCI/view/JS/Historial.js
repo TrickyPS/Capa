@@ -1,7 +1,10 @@
 
 $(document).ready(function(){
 
-
+    var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+    $("#uName").val(usuario.nombre);
+    $("#uEmail").val(usuario.correo);
+    $("#uContra").val(usuario.contra);
 
     $('#loginModal').modal('show');
     $(function () {
@@ -72,41 +75,54 @@ $(document).ready(function(){
   });
 
   $("#rerto3").on("submit", function (e) {
-
-    const variable = $('#passwordr').val();
-    debugger
-    funciono = validar_clave(variable);
+    e.preventDefault();
 
 
-    if(funciono == true){
-        
-        e.preventDefault(); // avoid to execute the actual submit of the form.
-    
+   
+    const correo = $('#uEmail').val();
+   const nombre = $("#uName").val();
+   const contra = $("#uContra").val();
+   // const avatar = $("#fileProfile").val();
+ 
         var form = $(this);
         var muestra = form.serialize();
-        var url = form.attr('action');
-
-    
-         debugger
+        var formData = new FormData();
+        var files = $('#avatar')[0].files[0];
+        formData.append('avatar',files);
+        formData.append('nombre',nombre);
+        formData.append('contra',contra);
+        formData.append('correo',correo);
+        formData.append('id',usuario.id);
+        
          $.ajax({     
            type: "POST",
-           url: "../../Controllers/registrate.php",
-           data: form.serialize(), // serializes the form's elements.
+           url: "../../Controllers/updateProfile.php",
+           enctype: "multipart/form-data",
+           data:  formData, // serializes the form's elements.
+           
+           processData: false,  // tell jQuery not to process the data
+           contentType: false ,
            success: function(data)
            {
-         
+            debugger
+            console.log(data);
            
-            alert('Te registraste correctamente') // show response from the php script.
+            var url = window.URL || window.webkitURL;
+            var binaryData = [];
+            binaryData.push(data);
+            var src = window.URL.createObjectURL(new Blob(binaryData, {type: "image/png"}));
+            
+            $('#image').attr("src", data);
+           
+           },
+           error : function(x,y,z){
+            debugger
            }
          });
 
    
-    }else{
-
-alert('Ingresa los datos correctamente');
-
-    }
-
+   
+         return false;
 
         
    

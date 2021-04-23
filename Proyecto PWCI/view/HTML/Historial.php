@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+$mostrar="";
+if(!isset($_SESSION["user"])){
+    header("Location:" . "Notfound.php");
+}else{
+    $mostrar = "d-none";
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -16,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap" rel="stylesheet">
-   
+    <script src="../JS/Modelos/models.js" defer></script>
     <title>Creative Studios</title>
 </head>
 
@@ -55,11 +66,11 @@
                     style="flex-direction: row; justify-content: space-evenly;">
 
                     <!-- Button trigger modal -->
-                    <li class="nav-item titulo" data-toggle="modal" data-target="#exampleModal">
-                        <a class="COLORL nav-link titulo" href="#">Inicia sesión</a>
+                    <li class="nav-item titulo  <?php echo $mostrar;   ?>" data-toggle="modal" data-target="#exampleModal">
+                        <a class="COLORL nav-link titulo   " href="#">Inicia sesión</a>
                     </li>
                     <!-- Button trigger modal2 -->
-                    <li class="nav-item titulo" data-toggle="modal" data-target="#exampleModal2">
+                    <li class="nav-item titulo   <?php echo $mostrar;   ?>" data-toggle="modal" data-target="#exampleModal2">
                         <a class="COLORL nav-link titulo" href="#">Registrate</a>
                     </li>
 
@@ -75,7 +86,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Mis cursos</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Cerrar sesion</a>
+                            <a class="dropdown-item" href="../../models/cierrasesion.php">Cerrar sesion</a>
                           </div>
                     </li>
                 </ul>
@@ -94,7 +105,7 @@
         <section class=" cuenta d-flex align-items-center" id="home" data-scroll-index="0">
             <div class="container">
                 <div class="col-lg-4 mx-auto text-center">
-                    <img class="rounded-circle" src="../IMG/photoshop.png" alt="" height="auto" width="auto">
+                    <img class="rounded-circle" src="../IMG/photoshop.png" alt="" height="300px" width="300px" id="image">
                     <title>Placeholder</title>
                     </svg>
 
@@ -102,7 +113,7 @@
                     <p>Some representative placeholder content for the three columns of text below the carousel. This is
                         the
                         first column.</p>
-                    <p><a class="btn btn-secondary" href="#">Cambiar Imagen</a></p>
+           
                 </div>
             </div>
         </section>
@@ -113,30 +124,36 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h6 class="mb-3 text-primary mx-auto text-center">Personal Details</h6>
                         </div>
-                        <form class="row justify-content-center" id="rertoU" accept-charset="utf-8" method="POST">
+                        <form class="row justify-content-center" id="rerto3" enctype="multipart/form-data" accept-charset="utf-8" method="POST">
+                        
                             <div class=" col-lg-6 col-md-6 col-sm-12">
                                 <div class="form-group">
-                                    <label for="fullName">Nombre</label>
-                                    <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+                                    <label for="uName">Nombre</label>
+                                    <input type="text" class="form-control" id="uName" placeholder="Enter full name" name="nombre">
+                                 </div>
+                            </div>
+                            <div class=" col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="uEmail">Email</label>
+                                    <input type="email" class="form-control" id="uEmail" placeholder="Enter email ID" name="correo">
                                 </div>
                             </div>
                             <div class=" col-lg-6 col-md-6 col-sm-12">
                                 <div class="form-group">
-                                    <label for="eMail">Email</label>
-                                    <input type="email" class="form-control" id="eMail" placeholder="Enter email ID">
+                                    <label for="uContra">Contraseña</label>
+                                    <input type="password" class="form-control" id="uContra" placeholder="Enter password" name="contra">
                                 </div>
                             </div>
-                            <div class=" col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="eMail">Contraseña</label>
-                                    <input type="email" class="form-control" id="eMail" placeholder="Enter password">
-                                </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12"">
+                                <label for="avatar">Example file input</label>
+                                <input type="file" class="form-control-file" id="avatar" name="avatar">
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 ">
                                 <div class="text-center  mx-auto justify-content m-3">
                                     <button type="submit" id="submit" name="submit"
                                         class="btn btn-primary">Update</button>
                                 </div>
+  
                             </div>
                         </form>
                     </div>
@@ -375,9 +392,8 @@
         </div>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
         </script>
