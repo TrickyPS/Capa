@@ -56,20 +56,20 @@
         <ul class="navbar-nav text-center ml-auto mt-2" style="flex-direction: row; justify-content: space-evenly;">
 
           <!-- Button trigger modal -->
-          <li class="nav-item titulo" data-toggle="modal" data-target="#exampleModal">
+          <li class="nav-item titulo" data-toggle="modal" data-target="#exampleModal" id="sesioninicia">
             <a class="COLORL nav-link titulo" href="#">Inicia sesión</a>
           </li>
           <!-- Button trigger modal2 -->
-          <li class="COLORL nav-item titulo" data-toggle="modal" data-target="#exampleModal2">
+          <li class="COLORL nav-item titulo" data-toggle="modal" data-target="#exampleModal2" id="sesionregistrate">
             <a class="COLORL nav-link titulo" href="#">Registrate</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item d-none" id="infocuenta">
 
-            <a class="COLORL nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            <a class="COLORL nav-link dropdown-toggle" href="#" id="sesionperfil" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <img class="imageno m-0 pb-0 rounded-circle" src="../IMG/photoshop.png" width="25px">
-              Cuenta
+          
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="Historial.html">Cuenta</a>
@@ -261,7 +261,7 @@
             </div>
 
 
-            <form id="rertol" accept-charset="utf-8">
+            <form id="rertol" accept-charset="utf-8" method="POST">
               <div class="form-group pl-5 pr-5">
                 <a>Correo electronico</a>
                 <input type="email" class="form-control" id="emaili" name="emaill" placeholder="Ingresa tu correo electronico">
@@ -308,7 +308,7 @@
             <div class="form-title text-center">
               <h4>Crea una cuenta.</h4>
             </div>
-            <form id="rerto" accept-charset="utf-8"> 
+            <form id="rerto" accept-charset="utf-8" method="POST"> 
               <div class="form-group pl-5 pr-5">
                 <a>Nombre completo</a>
                 <input type="text" class="form-control" name="nombresign" id="nombrer" placeholder="Escribe tu nombre">

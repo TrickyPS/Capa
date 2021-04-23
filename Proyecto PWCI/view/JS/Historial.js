@@ -71,5 +71,47 @@ $(document).ready(function(){
   
   });
 
-  
+  $("#rerto3").on("submit", function (e) {
+
+    const variable = $('#passwordr').val();
+    debugger
+    funciono = validar_clave(variable);
+
+
+    if(funciono == true){
+        
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+    
+        var form = $(this);
+        var muestra = form.serialize();
+        var url = form.attr('action');
+
+    
+         debugger
+         $.ajax({     
+           type: "POST",
+           url: "../../Controllers/registrate.php",
+           data: form.serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+         
+           
+            alert('Te registraste correctamente') // show response from the php script.
+           }
+         });
+
+   
+    }else{
+
+alert('Ingresa los datos correctamente');
+
+    }
+
+
+        
+   
+    
+});
+
+
 });

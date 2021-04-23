@@ -119,8 +119,17 @@ $(document).ready(function(){
                type: "POST",
                url: "../../Controllers/iniciasesion.php",
                data: form.serialize(), // serializes the form's elements.
+              
                success: function(data)
                {
+                var json = jQuery.parseJSON(data);
+               // console.log(json[0]);
+               
+                $("#sesionperfil").append(json[0].nombre); 
+                $("#sesionregistrate").hide(); 
+                $("#sesioninicia").hide(); 
+                $('#exampleModal').modal('hide');
+                $("#infocuenta").removeClass("d-none");
                    alert('Iniciaste correctamente'); // show response from the php script.
                }
                
@@ -161,6 +170,8 @@ $(document).ready(function(){
                data: form.serialize(), // serializes the form's elements.
                success: function(data)
                {
+             
+               
                 alert('Te registraste correctamente') // show response from the php script.
                }
              });
@@ -178,9 +189,7 @@ alert('Ingresa los datos correctamente');
         
     });
     
-
-
-
+   
 
 
 

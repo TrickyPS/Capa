@@ -9,3 +9,7 @@ var iniciasesion = function(correo, contraseña) {
 	this.correo = correo;
 	this.contraseña = contraseña;
 };
+var usuario = function () {
+
+
+  }

@@ -113,7 +113,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h6 class="mb-3 text-primary mx-auto text-center">Personal Details</h6>
                         </div>
-                        <form class="row justify-content-center">
+                        <form class="row justify-content-center" id="rertoU" accept-charset="utf-8" method="POST">
                             <div class=" col-lg-6 col-md-6 col-sm-12">
                                 <div class="form-group">
                                     <label for="fullName">Nombre</label>
@@ -132,20 +132,10 @@
                                     <input type="email" class="form-control" id="eMail" placeholder="Enter password">
                                 </div>
                             </div>
-                            <div class=" col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="eMail">Descripcion del usuario</label>
-                                    <textarea class="form-control" rows="3" id="comment"></textarea>
-                                </div>
-                            </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 ">
                                 <div class="text-center  mx-auto justify-content m-3">
-                                    <button type="button" id="submit" name="submit"
+                                    <button type="submit" id="submit" name="submit"
                                         class="btn btn-primary">Update</button>
-
-                                    <button type="button" id="submit" name="submit"
-                                        class="btn btn-secondary">Cancel</button>
-
                                 </div>
                             </div>
                         </form>

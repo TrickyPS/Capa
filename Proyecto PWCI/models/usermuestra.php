@@ -4,24 +4,25 @@ class User {
 
 private $db;
 private $user;
-
 private $nombre;
-private $contra;
 private $correo;
-private $clase;
+private $contra;
+private $avatar;
 
 
 
-public function __construct($correo,$contra){
+public function __construct($nombre,$correo,$contra,$avatar){
     $this->db=Connection::connect();
-    $this->correo =$correo;
-    $this->contra =$contra;
+    $this->correo =$nombre;
+    $this->contra =$correo;
+    $this->correo =$contra;
+    $this->contra =$avatar;
 }
 
 
-           public function Verifica(){
+           public function Obtener(){
 
-                $consulta = $this->db->query("CALL SP_Login('".$this->correo."','".$this->contra."')");
+                $consulta = $this->db->query("CALL SP_UpdatePerfil('".$this->nombre."','".$this->correo."','".$this->contra."','".$this->avatar."')");
 
 
                 if($consulta != null){
@@ -31,8 +32,6 @@ public function __construct($correo,$contra){
                     $this->user[]=$row;
 
                   }
-                  require_once("sesion.php");
-                  
                   return $this->user; 
                 }
                 else{
@@ -71,5 +70,3 @@ Connection::disconnect($this->db);
 return $this->user;
 }
 } */
-?>
-
