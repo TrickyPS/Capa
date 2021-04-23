@@ -112,7 +112,7 @@ $(document).ready(function(){
             binaryData.push(data);
             var src = window.URL.createObjectURL(new Blob(binaryData, {type: "image/png"}));
             
-            $('#image').attr("src", data);
+            $('#image').attr("src", src);
            
            },
            error : function(x,y,z){
