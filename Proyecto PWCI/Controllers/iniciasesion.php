@@ -6,8 +6,8 @@ require_once("../models/user2.php");
         $correo   = $_POST["emaill"];
 		$contra = $_POST["passwordl"];
 
-$usuario = new user($correo,$contra);
-$resp = $usuario->Verifica();   
+
+$resp = User :: Verifica($correo,$contra);   
 
 echo json_encode($resp);
 

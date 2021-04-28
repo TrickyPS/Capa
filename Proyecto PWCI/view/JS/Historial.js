@@ -5,7 +5,15 @@ $(document).ready(function(){
     $("#uName").val(usuario.nombre);
     $("#uEmail").val(usuario.correo);
     $("#uContra").val(usuario.contra);
+    debugger
+   if(usuario.estudiante == 0){
+    $("#tipou").append(usuario.nombre +"(Estudiante)");
+   }
+   else{
+    $("#tipou").append(usuario.nombre +"(Profesor)");
+   }
 
+    
     $('#loginModal').modal('show');
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
@@ -79,7 +87,7 @@ $(document).ready(function(){
 
 
    
-    const correo = $('#uEmail').val();
+   const correo = $('#uEmail').val();
    const nombre = $("#uName").val();
    const contra = $("#uContra").val();
    // const avatar = $("#fileProfile").val();

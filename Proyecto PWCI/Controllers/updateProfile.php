@@ -1,9 +1,9 @@
 <?php
-
+//header('Access-Control-Allow-Origin: *');
 require_once("../db/db.php");
 require_once("../models/user.php");
 
-$id = $_POST['id'];
+$id =     $_POST['id'];
 $nombre = $_POST["nombre"];
 $correo   = $_POST["correo"];
 $contra = $_POST["contra"];
@@ -19,7 +19,7 @@ if (count($_FILES) > 0) {
     
         $imgData = addslashes(file_get_contents($_FILES['avatar']['tmp_name']));
         //echo "$imgData";
-        $user = User::updatePerfil ($id,$nombre,$contra,$correo,$imgData);
+        $user = User :: updatePerfil ($id,$nombre,$contra,$correo,$imgData);
         
         header("Content-type: image/png");
         echo $user["avatar"];

@@ -9,192 +9,129 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <!--  Link de css -->
     <link rel="stylesheet" href="../CSS/Video.css">
-    <link rel="stylesheet" href="../CSS/cms.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Links de fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap" rel="stylesheet">
-
+   <!-- Links de fonts -->
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap" rel="stylesheet">
     <title>Creative Studios</title>
 </head>
 
 <body>
-    <div class="d-flex mamando ">
-        <nav class="navbar navbar2 navbar-light bg-light fixed-top">
+  
+<?php
+require_once("header.php")
+?>
+    <section class=" cursos d-flex " id="home" data-scroll-index="0">
+        <div class="container pt-4 mt-5 mb-5 ">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-8 col-sm-12">
+                    <div class=" mr-auto titulon">
+                        <h2>Video de prueba</h2>
+                    </div>
+                    <video class="jutify-content-center shadow" src="" width="100%" height="auto" poster=""
+                        style="background-color: black;"></video>
+                    
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis ipsum, temporibus
+                        obcaecati placeat at aut dolorum, ullam corporis alias repellendus consectetur velit et nam,
+                        nostrum est similique aspernatur numquam aperiam voluptatum pariatur cupiditate itaque fugiat
+                        iste? Eligendi dolores voluptatibus vero dolorum
+                        alias eaque repellat sint omnis dolore eos, inventore eum.</p>
+                </div>
+                <div class="commentsec mx-auto0 pt-3">
+                    <h1 class="mx-auto">Comment Section</h1>
+                </div>
+                <div class="col-lg-12 col-md-8 col-sm-12">
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img
+                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
+                                    class="user-img rounded-circle mr-2"> <span><small
+                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
+                                        class="font-weight-bold">El mejor video que he visto acerca de
+                                        photoshop</small></span>
+                            </div>
+                            <small>1 min ago</small>
+                        </div>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img
+                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
+                                    class="user-img rounded-circle mr-2"> <span><small
+                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
+                                        class="font-weight-bold">El mejor video que he visto acerca de
+                                        photoshop</small></span>
+                            </div>
+                            <small>1 min ago</small>
+                        </div>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img
+                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
+                                    class="user-img rounded-circle mr-2"> <span><small
+                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
+                                        class="font-weight-bold">El mejor video que he visto acerca de
+                                        photoshop</small></span>
+                            </div>
+                            <small>1 min ago</small>
+                        </div>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img
+                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
+                                    class="user-img rounded-circle mr-2"> <span><small
+                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
+                                        class="font-weight-bold">El mejor video que he visto acerca de
+                                        photoshop</small></span>
+                            </div>
+                            <small>1 min ago</small>
+                        </div>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img
+                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
+                                    class="user-img rounded-circle mr-2"> <span><small
+                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
+                                        class="font-weight-bold">El mejor video que he visto acerca de
+                                        photoshop</small></span>
+                            </div>
+                            <small>1 min ago</small>
+                        </div>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img
+                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
+                                    class="user-img rounded-circle mr-2"> <span><small
+                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
+                                        class="font-weight-bold">El mejor video que he visto acerca de
+                                        photoshop</small></span>
+                            </div>
+                            <small>1 min ago</small>
+                        </div>
+                    </div>
+                </div>
+                <form action="" class="col-lg-12 col-md-8 col-sm-12">
+                    <div class="comentarios"></div>
+                    <div class="form-group">
+                        <label for="comment">Comentario:</label>
+                        <textarea class="form-control" rows="2" id="comment"></textarea>
+                    </div>
+            </div>
+            <div class=" botonsub justify-content-between">
+                <button type="button" class="btn btn-dark">Comentar</button>
+                <button type="button" class="btn btn-dark">Cancelar</button>
+            </div>
 
-            <a class="navbar-brand p-0" href="#">Diseño web</a>
-            <a class="navbar-brand p-0" href="#">Programacion</a>
-            <a class="navbar-brand p-0" href="#">C</a>
-            <a class="navbar-brand p-0" href="#">Ciencias</a>
-            <a class="navbar-brand p-0" href="#">Ciencias</a>
-            <a class="navbar-brand p-0" href="#">Ciencias</a>
-        </nav>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="namep">
-            <img class="imageno m-0 pb-1" src="../IMG/C.png" width="35px">
-            <a class="navbar-brand titulo" href="IndexNuevo.html">Creative Studios</a>
-        </div>
-        <button id="botonazo" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <form class=" form1 form-inline mx-auto justify-content-center">
-                <input class="buscador form-control mr-sm-2 justify-content-center" type="search" placeholder="Search"
-                    aria-label="Search" style="width: 260px;">
-                <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
 
-            <div class="grupo ml-auto">
-                <ul class="navbar-nav text-center ml-auto mt-2"
-                    style="flex-direction: row; justify-content: space-evenly;">
-
-                    <!-- Button trigger modal -->
-                    <li class="nav-item titulo" data-toggle="modal" data-target="#exampleModal">
-                        <a class="nav-link titulo" href="#">Inicia sesión</a>
-                    </li>
-                    <!-- Button trigger modal2 -->
-                    <li class="nav-item titulo" data-toggle="modal" data-target="#exampleModal2">
-                        <a class="nav-link titulo" href="#">Registrate</a>
-                    </li>
-
-                    <a class="perfilrandom nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="Historial.html">Cuenta</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Mis cursos</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Cerrar sesion</a>
-                    </div>
-                    </li>
-                </ul>
-            </div>
         </div>
-    </nav>
-    <div class="d-flex inicio justify-content-center mx-auto" style="padding-top: 140px;">
-
-    </div>
-    <section class=" cursos d-flex justify-content-center" id="home" data-scroll-index="0">
-        <div class="m-4 container  p-5">
-
-            <div class="container dark-grey-text mt-5">
-
-                <!--Grid row-->
-                <div class="row wow fadeIn">
-
-                    <!--Grid column-->
-                    <div class="col-md-6 mb-4 text-center">
-
-                        <img src="../IMG/photoshop.png" class="img-fluid" alt="">
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-6 mb-4">
-
-                        <!--Content-->
-                        <div class="p-4">
-
-                            <div class="mb-3">
-
-                                <h4>Nombre del producto</h4>
-                            </div>
-
-                            <p class="lead">
-                                <span class="mr-1">
-                                    <del>$150</del>
-                                </span>
-                                <span>$100</span>
-                            </p>
-
-                            <p class="lead font-weight-bold">Description</p>
-
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos
-                                atque quia
-                                ipsa
-                                sint voluptatibus!
-                                Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.
-                            </p>
-
-                            <form class="d-flex justify-content-left">
-                                <!-- Default input -->
-                                <input type="number" value="1" aria-label="Search" class="form-control"
-                                    style="width: 100px">
-                                <button class="ml-2 btn btn-primary btn-md my-0 p waves-effect waves-light"
-                                    type="submit">Add to cart
-                                    <i class="fas fa-shopping-cart ml-1"></i>
-                                </button>
-
-                            </form>
-
-                        </div>
-                        <!--Content-->
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-
-
-            </div>
-
-            <h2 class="mt-5 mb-3 text-center">Contenido</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-6">
-                        <div class="list-group mb-2">
-                            <button class="list-group-item list-group-item-action bg-dark text-light" id="hide_nivel">
-                                Cras justo odio
-                            </button>
-                            <div>
-                                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                                <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                                <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at
-                                    eros</a>
-                            </div>
-                        </div>
-                        <div class="list-group  mb-2">
-                            <button class="list-group-item list-group-item-action bg-dark text-light" id="hide_nivel2">
-                                Cras justo odio
-                            </button>
-                            <div>
-                                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                                <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                                <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at
-                                    eros</a>
-                            </div>
-                        </div>
-                        <div class="list-group  mb-2">
-                            <button class="list-group-item list-group-item-action bg-dark text-light" id="hide_nivel3">
-                                Cras justo odio
-                            </button>
-                            <div>
-                                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                                <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                                <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at
-                                    eros</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3"></div>
-                </div>
-            </div>
-
         </div>
     </section>
     <footer class=" text-center text-white">
@@ -347,7 +284,6 @@
         </script>
     <!-- Optional JavaScript -->
     <script src="../JS/Video.js"></script>
-    <script src="../JS/perfilrandom.js"></script>
 </body>
 
 </html>

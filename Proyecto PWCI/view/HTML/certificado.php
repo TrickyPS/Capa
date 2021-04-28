@@ -16,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-
 <body>
     <div class="d-flex row  justify-content-center w-100 h-100">
         <div class=" certificado w-75 m-5 " id="certificado">

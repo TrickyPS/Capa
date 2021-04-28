@@ -114,12 +114,12 @@ $(document).ready(function(){
             var url = form.attr('action');
 
         
-             
+            debugger
              $.ajax({
                type: "POST",
                url: "../../Controllers/iniciasesion.php",
                data: form.serialize(), // serializes the form's elements.
-              
+             
                success: function(data)
                {
                 var json = jQuery.parseJSON(data);

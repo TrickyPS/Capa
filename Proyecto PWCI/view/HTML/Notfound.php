@@ -22,72 +22,10 @@
     
     <title>Creative Studios</title>
 </head>
-
-
 <body style="background: linear-gradient(90deg, rgb(27, 27, 27) 9%, rgb(17, 14, 14) 100%);">
-    <div class="d-flex mamando ">
-        <nav class="navbar navbar2 navbar-light bg-light fixed-top">
-
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Diseño web</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Programacion</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">C</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-        </nav>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="namep">
-            <img class="imageno m-0 pb-1" src="../IMG/C.png" width="35px">
-            <a class="navbar-brand titulo" href="IndexNuevo.html">Creative Studios</a>
-        </div>
-        <button id="botonazo" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <form class=" form1 form-inline mx-auto justify-content-center">
-                <input class="buscador form-control mr-sm-2 justify-content-center" type="search" placeholder="Search"
-                    aria-label="Search" style="width: 260px;">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-
-            <div class="grupo ml-auto">
-                <ul class="navbar-nav text-center ml-auto mt-2"
-                    style="flex-direction: row; justify-content: space-evenly;">
-
-                    <!-- Button trigger modal -->
-                    <li class="nav-item titulo" data-toggle="modal" data-target="#exampleModal">
-                        <a class="COLORL nav-link titulo" href="#">Inicia sesión</a>
-                    </li>
-                    <!-- Button trigger modal2 -->
-                    <li class="nav-item titulo" data-toggle="modal" data-target="#exampleModal2">
-                        <a class="COLORL nav-link titulo" href="#">Registrate</a>
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="COLORL nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="imageno m-0 pb-0 rounded-circle" src="../IMG/photoshop.png" width="25px">
-                            Pedro
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Historial.html">Cuenta</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Mis cursos</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Cerrar sesion</a>
-                          </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="d-flex inicio justify-content-center mx-auto" style="padding-top: 90px;">
-    </div>
+<?php
+require_once("header.php")
+?>
     <div class="notfound">
         <div class="container">
             <div class="d-flex divisi text-center">

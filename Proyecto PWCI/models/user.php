@@ -13,19 +13,15 @@ private $avater;
 
 
 
-public function __construct($nombre,$contra,$correo,$clase){
-        $this->db=Connection::connect();
-        $this->nombre =$nombre;
-        $this->contra =$contra;
-        $this->correo =$correo;
-        $this->clase =$clase;
+public function __construct(){
+      
         }
 
 
 public static function updatePerfil ($id,$nombre,$contra,$correo,$avatar){
         $user = null;
         $db=Connection::connect();
-        $consulta =$db->query("CALL SP_UpdatePerfil(".$id.",'".$nombre."','".$correo."','".$contra."','".$avatar."')");
+        $consulta = $db->query("CALL SP_UpdatePerfil(".$id.",'".$nombre."','".$correo."','".$contra."','".$avatar."')");
         
         if($consulta != null){
 
@@ -47,9 +43,9 @@ public static function updatePerfil ($id,$nombre,$contra,$correo,$avatar){
 
         
 
-public function Registra(){
-     
-        $this->db->query("CALL SP_AltaUsuario('".$this->nombre."','".$this->contra."','".$this->correo."',".$this->clase.")");
+public static  function Registra($nombre,$correo,$contra,$clase){
+        $db = Connection::connect();
+        $db->query("CALL SP_AltaUsuario('".$nombre."','".$correo."','".$contra."',".$clase.")");
         Connection::disconnect($this->db);
            }
 

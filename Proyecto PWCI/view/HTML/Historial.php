@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-$mostrar="";
-if(!isset($_SESSION["user"])){
-    header("Location:" . "Notfound.php");
-}else{
-    $mostrar = "d-none";
-}
-?>
 
 <!doctype html>
 <html lang="en">
@@ -32,71 +22,9 @@ if(!isset($_SESSION["user"])){
 </head>
 
 <body>
-    <div class="d-flex mamando ">
-        <nav class="navbar navbar2 navbar-light bg-light fixed-top">
-
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Diseño web</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Programacion</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">C</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-            <a class="navbar-brand p-0" href="#"  style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-        </nav>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="namep">
-            <img class="imageno m-0 pb-1" src="../IMG/C.png" width="35px">
-            <a class="navbar-brand titulo" href="IndexNuevo.html">Creative Studios</a>
-        </div>
-        <button id="botonazo" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <form class=" form1 form-inline mx-auto justify-content-center">
-                <input class="buscador form-control mr-sm-2 justify-content-center" type="search" placeholder="Search"
-                    aria-label="Search" style="width: 260px;">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-
-            <div class="grupo ml-auto">
-                <ul class="navbar-nav text-center ml-auto mt-2"
-                    style="flex-direction: row; justify-content: space-evenly;">
-
-                    <!-- Button trigger modal -->
-                    <li class="nav-item titulo  <?php echo $mostrar;   ?>" data-toggle="modal" data-target="#exampleModal">
-                        <a class="COLORL nav-link titulo   " href="#">Inicia sesión</a>
-                    </li>
-                    <!-- Button trigger modal2 -->
-                    <li class="nav-item titulo   <?php echo $mostrar;   ?>" data-toggle="modal" data-target="#exampleModal2">
-                        <a class="COLORL nav-link titulo" href="#">Registrate</a>
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="COLORL nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="imageno m-0 pb-0 rounded-circle" src="../IMG/photoshop.png" width="25px">
-                            Pedro
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="Historial.html">Cuenta</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Mis cursos</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../../models/cierrasesion.php">Cerrar sesion</a>
-                          </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="d-flex inicio justify-content-center mx-auto" style="padding-top: 90px;">
-        <h1 class="primero d-none" style="color: white;">Mi cuenta</h1>
-        <h1 class="segundo" style="color: white;">Mis cursos</h1>
-    </div>
+<?php
+require_once("header.php")
+?>
     <div class=" d-flex opciones mx-auto border-bottom border shadow" style="justify-content: space-evenly;">
         <button id="boton1" class="button mt-2"><span>Mi cuenta</span></button>
         <button id="boton2" class="button mt-2"><span>Cursos</span></button>
@@ -109,7 +37,7 @@ if(!isset($_SESSION["user"])){
                     <title>Placeholder</title>
                     </svg>
 
-                    <h2>Pedro Ramirez</h2>
+                    <h2 id="tipou"></h2>
                     <p>Some representative placeholder content for the three columns of text below the carousel. This is
                         the
                         first column.</p>

@@ -12,48 +12,37 @@ private $clase;
 
 
 
-public function __construct($correo,$contra){
-    $this->db=Connection::connect();
-    $this->correo =$correo;
-    $this->contra =$contra;
+public function __construct(){
+   
 }
 
 
-           public function Verifica(){
+static  public function Verifica($correo,$contra){
+                $user = null;
+                $db = Connection::connect();
 
-                $consulta = $this->db->query("CALL SP_Login('".$this->correo."','".$this->contra."')");
+                $consulta = $db->query("CALL SP_Login('".$correo."','".$contra."')");
 
 
                 if($consulta != null){
 
                   while($row = $consulta->fetch_assoc()) {
 
-                    $this->user[]=$row;
+                    $user[]=$row;
 
                   }
                   require_once("sesion.php");
                   
-                  return $this->user; 
+                  return $user; 
                 }
                 else{
+                  
                   echo('no funciono');
                 }
-               
-                 
-                Connection::disconnect($this->db);
-            
-
-  
+             
+                Connection::disconnect($db);
+    
                   }
-
-
-
-
-
-
-
-
-
 
 
                 }

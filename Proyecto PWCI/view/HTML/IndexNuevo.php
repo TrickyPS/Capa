@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,9 +36,11 @@
   </div>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="namep">
-      <img class="imageno m-0 pb-1" src="../IMG/C.png" width="35px">
-      <a class=" pl-2 navbar-brand titulo" href="IndexNuevo.html"
-        style="font-family: 'Bebas Neue', cursive; font-size: 25px;">Creative Studios</a>
+
+
+      <img class="imageno m-0 pb-1" id="perico" src="" width="35px">
+
+      <a class=" pl-2 navbar-brand titulo" href="IndexNuevo.html" style="font-family: 'Bebas Neue', cursive; font-size: 25px;">Creative Studios</a>
     </div>
 
     <button id="botonazo" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -69,7 +73,6 @@
             <a class="COLORL nav-link dropdown-toggle" href="#" id="sesionperfil" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               <img class="imageno m-0 pb-0 rounded-circle" src="../IMG/photoshop.png" width="25px">
-          
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="Historial.php">Cuenta</a>
@@ -264,15 +267,17 @@
             <form id="rertol" accept-charset="utf-8" method="POST">
               <div class="form-group pl-5 pr-5">
                 <a>Correo electronico</a>
-                <input type="email" class="form-control" id="emaili" name="emaill" placeholder="Ingresa tu correo electronico">
+                <input type="email" class="form-control" id="emaili" name="emaill"
+                  placeholder="Ingresa tu correo electronico">
               </div>
               <div class="form-group pl-5 pr-5">
                 <a>Contraseña</a>
-                <input type="password" class="form-control" id="passwordi" name="passwordl" placeholder="Ingresa tu contraseña">
+                <input type="password" class="form-control" id="passwordi" name="passwordl"
+                  placeholder="Ingresa tu contraseña">
               </div>
-           
-                <button type="submit" class="btn btn-primary btn-md d-block mx-auto">Inicia sesion</button>
-              
+
+              <button type="submit" class="btn btn-primary btn-md d-block mx-auto">Inicia sesion</button>
+
             </form>
 
 
@@ -308,7 +313,7 @@
             <div class="form-title text-center">
               <h4>Crea una cuenta.</h4>
             </div>
-            <form id="rerto" accept-charset="utf-8" method="POST"> 
+            <form id="rerto" accept-charset="utf-8" method="POST">
               <div class="form-group pl-5 pr-5">
                 <a>Nombre completo</a>
                 <input type="text" class="form-control" name="nombresign" id="nombrer" placeholder="Escribe tu nombre">
@@ -324,23 +329,25 @@
               </div>
               <div class="row justify-content-center">
                 <div class="form-check pl-4">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="false">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                    value="false">
                   <label class="form-check-label" for="flexRadioDefault1">
-                   Estudiante
+                    Estudiante
                   </label>
                 </div>
                 <div class="form-check pr-4 " style="margin-left: 40px !important;">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="true" checked >
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                    value="true" checked>
                   <label class="form-check-label" for="flexRadioDefault2">
-                   Profesor
+                    Profesor
                   </label>
                 </div>
               </div>
 
-              
-                <button type="sumbit" class="btn btn-primary btn-md d-block mx-auto">Registrate</button>
-              
-             
+
+              <button type="sumbit" class="btn btn-primary btn-md d-block mx-auto">Registrate</button>
+
+
             </form>
 
             <div class="text-center text-muted delimiter pt-2">or use a social network</div>
@@ -359,7 +366,7 @@
         </div>
       </div>
     </div>
-  </div> 
+  </div>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
