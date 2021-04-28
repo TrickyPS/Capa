@@ -1,17 +1,12 @@
 
 $(document).ready(function(){
 
-    var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
-    $("#uName").val(usuario.nombre);
-    $("#uEmail").val(usuario.correo);
-    $("#uContra").val(usuario.contra);
-    debugger
-   if(usuario.estudiante == 0){
-    $("#tipou").append(usuario.nombre +"(Estudiante)");
-   }
-   else{
-    $("#tipou").append(usuario.nombre +"(Profesor)");
-   }
+   updateDatosPerfil()
+   getAvatar()
+
+
+
+
 
     
     $('#loginModal').modal('show');
@@ -91,7 +86,7 @@ $(document).ready(function(){
    const nombre = $("#uName").val();
    const contra = $("#uContra").val();
    // const avatar = $("#fileProfile").val();
- 
+   var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
         var form = $(this);
         var muestra = form.serialize();
         var formData = new FormData();
@@ -112,15 +107,15 @@ $(document).ready(function(){
            contentType: false ,
            success: function(data)
            {
-            debugger
-            console.log(data);
-           
-            var url = window.URL || window.webkitURL;
-            var binaryData = [];
-            binaryData.push(data);
-            var src = window.URL.createObjectURL(new Blob(binaryData, {type: "image/png"}));
-            
-            $('#image').attr("src", src);
+
+            var json = jQuery.parseJSON(data);
+               // console.log(json[0]);
+               var resp = json[0];
+                var usuario = new Usuario(resp.id,resp.nombre,resp.correo,resp.contra,resp.usuario_escuela,null);
+                sessionStorage.setItem("user", JSON.stringify(usuario));
+                updateDatosPerfil()
+                getAvatar()
+           // $('#image').attr("src", data);
            
            },
            error : function(x,y,z){
@@ -139,3 +134,47 @@ $(document).ready(function(){
 
 
 });
+
+function updateDatosPerfil(){
+    var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+    $("#uName").val(usuario.nombre);
+    $("#uEmail").val(usuario.correo);
+    $("#uContra").val(usuario.contra);
+   
+   if(usuario.estudiante == 0){
+    $("#tipou").append(usuario.nombre +"(Estudiante)");
+   }
+   else{
+    $("#tipou").append(usuario.nombre +"(Profesor)");
+   }
+
+}
+
+function getAvatar(){
+    var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+debugger
+    $.ajax({     
+        type: "POST",
+        url: "../../Controllers/getImageProfile.php",
+        
+        data: {'id': usuario.id} , // serializes the form's elements.
+        
+        //processData: false,  // tell jQuery not to process the data
+        //contentType: false ,
+        success: function(data)
+        {
+
+       debugger
+             sessionStorage.setItem("avatar", data);
+
+             if(data != "\r\ndata:image/jpeg;base64,")
+              $('#image').attr("src", data);
+
+        
+        },
+        error : function(x,y,z){
+         debugger
+        }
+      });
+
+}

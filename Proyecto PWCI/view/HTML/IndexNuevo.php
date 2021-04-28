@@ -38,7 +38,7 @@
     <div class="namep">
 
 
-      <img class="imageno m-0 pb-1" id="perico" src="" width="35px">
+      <img class="imageno m-0 pb-1" id="perico" src="../IMG/C.png" width="35px">
 
       <a class=" pl-2 navbar-brand titulo" href="IndexNuevo.html" style="font-family: 'Bebas Neue', cursive; font-size: 25px;">Creative Studios</a>
     </div>

@@ -19,18 +19,23 @@ if (count($_FILES) > 0) {
     
         $imgData = addslashes(file_get_contents($_FILES['avatar']['tmp_name']));
         //echo "$imgData";
-        $user = User :: updatePerfil ($id,$nombre,$contra,$correo,$imgData);
+        $user = User :: updatePerfilAvatar ($id,$nombre,$contra,$correo,$imgData);
         
-        header("Content-type: image/png");
-        echo $user["avatar"];
-        //echo json_encode($user);
+ // header("Content-type: image/png");
+       // echo $user["avatar"];
+      // echo 'data:image/jpeg;base64,'.base64_encode(  $user["avatar"] );
+       echo json_encode($user);
+  
    
 } else {
-    echo "No es una imagen";
+
+    echo "No es imagen";
+  
 }
 }else{
   
-    echo"no pasa";
+    $user = User :: updatePerfil ($id,$nombre,$contra,$correo);
+    echo json_encode($user);
 }
 
 

@@ -122,10 +122,11 @@ $(document).ready(function(){
              
                success: function(data)
                {
+                   debugger
                 var json = jQuery.parseJSON(data);
                // console.log(json[0]);
                var resp = json[0];
-                var usuario = new Usuario(resp.id,resp.nombre,resp.correo,resp.contra,resp.usuario_escuela,resp.avatar);
+                var usuario = new Usuario(resp.id,resp.nombre,resp.correo,resp.contra,resp.usuario_escuela,null);
                 sessionStorage.setItem("user", JSON.stringify(usuario));
                 debugger;
                 $("#sesionperfil").append(json[0].nombre); 

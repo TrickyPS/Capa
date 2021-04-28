@@ -24,7 +24,7 @@ if(!isset($_SESSION["user"])){
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="namep">
             <img class="imageno m-0 pb-1" src="../IMG/C.png" width="35px">
-            <a class="navbar-brand titulo" href="IndexNuevo.html" style="font-family: 'Bebas Neue', cursive; font-size: 25px;"  >Creative Studios</a>
+            <a class="navbar-brand titulo" href="IndexNuevo.php" style="font-family: 'Bebas Neue', cursive; font-size: 25px;"  >Creative Studios</a>
         </div>
         <button id="botonazo" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
