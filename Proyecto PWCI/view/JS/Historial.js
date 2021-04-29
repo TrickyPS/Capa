@@ -142,10 +142,10 @@ function updateDatosPerfil(){
     $("#uContra").val(usuario.contra);
    
    if(usuario.estudiante == 0){
-    $("#tipou").append(usuario.nombre +"(Estudiante)");
+    $("#tipou").text(usuario.nombre +"(Estudiante)");
    }
    else{
-    $("#tipou").append(usuario.nombre +"(Profesor)");
+    $("#tipou").text(usuario.nombre +"(Profesor)");
    }
 
 }
