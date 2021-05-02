@@ -3,7 +3,19 @@
 
 <head>
 
+  <?php
+session_start();
 
+if(!isset($_SESSION["user"])){
+  //  header("Location:" . "Notfound.php");
+}else{
+    echo"<script>
+    alert('si hay sesion de php');
+    </script>";
+  }
+  
+?>
+    
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -79,13 +91,20 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Mis cursos</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../../models/cierrasesion.php">Cerrar sesion</a>
+              <a class="dropdown-item" href="../../models/cierrasesion.php" onclick="myFunction();">Cerrar sesion</a>
+              <script>
+                 function myFunction() {
+                   debugger
+                   sessionStorage.clear();
+                     }
+              </script>
             </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  
   <section class="inicio d-flex align-items-center shadow" id="home" data-scroll-index="0">
     <div class="container">
       <div class="mt-5 row row-inicio align-items-center">
@@ -379,6 +398,10 @@
   <!-- Optional JavaScript -->
   <script src="../JS/IndexNuevo.js"></script>
   <script src="../JS/Modelos/models.js"></script>
+
+    
+
+
 </body>
 
 

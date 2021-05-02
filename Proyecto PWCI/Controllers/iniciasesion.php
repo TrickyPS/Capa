@@ -9,6 +9,6 @@ require_once("../models/user2.php");
 
 $resp = User :: Verifica($correo,$contra);   
 
-echo json_encode($resp);
+echo json_encode($resp);    
 
 ?>

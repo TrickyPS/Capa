@@ -61,7 +61,7 @@ if(!isset($_SESSION["user"])){
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Mis cursos</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Cerrar sesion</a>
+                        <a class="dropdown-item" href="../../JS/cierrasesion.php">Cerrar sesion</a>
                     </div>
                     </li>
                 </ul>

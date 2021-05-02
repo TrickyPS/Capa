@@ -150,31 +150,31 @@ function updateDatosPerfil(){
 
 }
 
-function getAvatar(){
-    var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
-debugger
-    $.ajax({     
-        type: "POST",
-        url: "../../Controllers/getImageProfile.php",
-        
-        data: {'id': usuario.id} , // serializes the form's elements.
-        
-        //processData: false,  // tell jQuery not to process the data
-        //contentType: false ,
-        success: function(data)
-        {
+        function getAvatar(){
+            var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+        debugger
+            $.ajax({     
+                type: "POST",
+                url: "../../Controllers/getImageProfile.php",
+                
+                data: {'id': usuario.id} , // serializes the form's elements.
+                
+                //processData: false,  // tell jQuery not to process the data
+                //contentType: false ,
+                success: function(data)
+                {
 
-       debugger
-             sessionStorage.setItem("avatar", data);
+            debugger
+                    sessionStorage.setItem("avatar", data);
 
-             if(data != "\r\ndata:image/jpeg;base64,")
-              $('#image').attr("src", data);
+                    if(data != "\r\ndata:image/jpeg;base64,")
+                    $('#image').attr("src", data);
 
-        
-        },
-        error : function(x,y,z){
-         debugger
+                
+                },
+                error : function(x,y,z){
+                debugger
+                }
+            });
+
         }
-      });
-
-}

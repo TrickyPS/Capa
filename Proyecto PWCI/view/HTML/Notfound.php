@@ -23,9 +23,9 @@
     <title>Creative Studios</title>
 </head>
 <body style="background: linear-gradient(90deg, rgb(27, 27, 27) 9%, rgb(17, 14, 14) 100%);">
-<?php
-require_once("header.php")
-?>
+<!-- <?php
+/* require_once("header.php") */
+?> -->
     <div class="notfound">
         <div class="container">
             <div class="d-flex divisi text-center">

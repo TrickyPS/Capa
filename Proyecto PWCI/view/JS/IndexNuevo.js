@@ -124,25 +124,32 @@ $(document).ready(function(){
                {
                    debugger
                 var json = jQuery.parseJSON(data);
-               // console.log(json[0]);
-               var resp = json[0];
+                //  console.log(json[0]);
+                var resp = json[0];
                 var usuario = new Usuario(resp.id,resp.nombre,resp.correo,resp.contra,resp.usuario_escuela,null);
                 sessionStorage.setItem("user", JSON.stringify(usuario));
                 debugger;
-                $("#sesionperfil").append(json[0].nombre); 
+               // $("#sesionperfil").append(json[0].nombre); 
                 $("#sesionregistrate").hide(); 
                 $("#sesioninicia").hide(); 
                 $('#exampleModal').modal('hide');
                 $("#infocuenta").removeClass("d-none");
-                   alert('Iniciaste correctamente'); // show response from the php script.
+                alert('Iniciaste correctamente'); // show response from the php script.
                }
                
              });
    
-            
-       
-        
+           
     });
+     
+    var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+    if(usuario != null){
+        debugger
+      $("#sesionperfil").text(usuario.nombre); 
+      $("#infocuenta").removeClass("d-none");
+      $("#sesionregistrate").hide(); 
+      $("#sesioninicia").hide(); 
+    }
 
 
 
