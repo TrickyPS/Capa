@@ -7,7 +7,7 @@ require_once("../models/user2.php");
 		$contra = $_POST["passwordl"];
 
 
-$resp = User :: Verifica($correo,$contra);   
+$resp = UserV :: Verifica($correo,$contra);   
 
 echo json_encode($resp);    
 

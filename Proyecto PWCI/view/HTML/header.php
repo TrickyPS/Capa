@@ -2,10 +2,20 @@
 session_start();
 
 $mostrar="";
+$nombre = "";
+$avatar = "";
 if(!isset($_SESSION["user"])){
     header("Location:" . "Notfound.php");
 }else{
     $mostrar = "d-none";
+    $nombre = $_SESSION["nombre"];
+
+
+    
+    $avatar = $_SESSION["avatar"];
+    if(  $avatar == "data:image/jpeg;base64,"){
+        $avatar =  "../IMG/photoshop.png";
+    }
 }
 ?>
 
@@ -54,14 +64,22 @@ if(!isset($_SESSION["user"])){
 
                     <a class="perfilrandom nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="imageno m-0 pb-0 rounded-circle" src="../IMG/photoshop.png" width="25px">
+                        
+                        <img class="imageno m-0 pb-0 rounded-circle" src="<?php echo $avatar; ?>" width="25px">
+                        <?php echo $nombre;  ?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="Historial.html">Cuenta</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Mis cursos</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../../JS/cierrasesion.php">Cerrar sesion</a>
+                        <a class="dropdown-item" href="../../models/cierrasesion.php" onclick="myFunction();">Cerrar sesion</a>
+                        <script>
+                 function myFunction() {
+                   debugger
+                   sessionStorage.clear();
+                     }
+              </script>
                     </div>
                     </li>
                 </ul>

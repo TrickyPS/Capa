@@ -1,6 +1,6 @@
   <?php
 
-  class User {
+  class UserV {
 
   private $db;
   private $user;
