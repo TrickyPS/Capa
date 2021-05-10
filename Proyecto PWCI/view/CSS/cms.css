@@ -4,3 +4,30 @@
 .COLORL{
     color: white !important;
 }
+
+.ver_todos{
+    cursor: pointer;
+}
+
+.ver_todos:hover{
+    text-decoration: underline !important;
+}
+
+.btn-main{
+    color: #fff;
+    background-color: rgba(49,92,101,1);
+    border-color: rgba(49,92,101,1);
+}
+
+.btn-second{
+    color: #fff;
+    background-color: rgba(50,38,38,1);
+    border-color: rgba(50,38,38,1);
+}
+
+.dropN{
+    width: -webkit-fill-available !important;
+    position: absolute ;
+    transform: translate3d(0px, 0px, 0px) !important; 
+    top: auto !important;
+}

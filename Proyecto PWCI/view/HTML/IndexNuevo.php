@@ -3,18 +3,7 @@
 
 <head>
 
-  <?php
-session_start();
 
-if(!isset($_SESSION["user"])){
-  //  header("Location:" . "Notfound.php");
-}else{
-    echo"<script>
-    alert('si hay sesion de php');
-    </script>";
-  }
-  
-?>
     
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -24,8 +13,8 @@ if(!isset($_SESSION["user"])){
   <!--  Link de css -->
   <link rel="stylesheet" href="../CSS/IndexNuevo.css">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+   
   <!-- Links de fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -35,75 +24,9 @@ if(!isset($_SESSION["user"])){
 </head>
 
 <body>
-  <div class="d-flex mamando ">
-    <nav class="navbar navbar2 navbar-light bg-light fixed-top">
-
-      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Diseño web</a>
-      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Programacion</a>
-      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">C</a>
-      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-      <a class="navbar-brand p-0" href="#" style="font-family: 'Fjalla One', sans-serif;">Ciencias</a>
-    </nav>
-  </div>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="namep">
-
-
-      <img class="imageno m-0 pb-1" id="perico" src="../IMG/C.png" width="35px">
-
-      <a class=" pl-2 navbar-brand titulo" href="IndexNuevo.html" style="font-family: 'Bebas Neue', cursive; font-size: 25px;">Creative Studios</a>
-    </div>
-
-    <button id="botonazo" class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <form class=" form1 form-inline mx-auto justify-content-center">
-        <input class="buscador form-control mr-sm-2 justify-content-center" type="search" placeholder="Search"
-          aria-label="Search" style="width: 260px;">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-
-      <div class="grupo ml-auto">
-        <ul class="navbar-nav text-center ml-auto mt-2" style="flex-direction: row; justify-content: space-evenly;">
-
-          <!-- Button trigger modal -->
-          <li class="nav-item titulo" data-toggle="modal" data-target="#exampleModal" id="sesioninicia">
-            <a class="COLORL nav-link titulo" href="#">Inicia sesión</a>
-          </li>
-          <!-- Button trigger modal2 -->
-          <li class="COLORL nav-item titulo" data-toggle="modal" data-target="#exampleModal2" id="sesionregistrate">
-            <a class="COLORL nav-link titulo" href="#">Registrate</a>
-          </li>
-
-          <li class="nav-item d-none" id="infocuenta">
-
-            <a class="COLORL nav-link dropdown-toggle" href="#" id="sesionperfil" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              <img class="imageno m-0 pb-0 rounded-circle" src="../IMG/photoshop.png" width="25px">
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="Historial.php">Cuenta</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Mis cursos</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="../../models/cierrasesion.php" onclick="myFunction();">Cerrar sesion</a>
-              <script>
-                 function myFunction() {
-                   debugger
-                   sessionStorage.clear();
-                     }
-              </script>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<?php
+require_once("header.php")
+?>
   
   <section class="inicio d-flex align-items-center shadow" id="home" data-scroll-index="0">
     <div class="container">
@@ -128,13 +51,13 @@ if(!isset($_SESSION["user"])){
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100" src="../IMG/Libro.png" alt="First slide">
+                  <img class="d-block w-100" src="../IMG/car1.png" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="../IMG/perrito.png" alt="Second slide">
+                  <img class="d-block w-100" src="../IMG/car2.png" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100" src="../IMG/perrito.png" alt="Third slide">
+                  <img class="d-block w-100" src="../IMG/car3.png" alt="Third slide">
                 </div>
               </div>
             </div>
@@ -387,14 +310,9 @@ if(!isset($_SESSION["user"])){
     </div>
   </div>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+  <script src="../JS/jquery-3.6.0.min.js"></script>
+  <script src="../JS/bootstrap4.js"></script>
+  <script src="../JS/popper4.js"></script>
   <!-- Optional JavaScript -->
   <script src="../JS/IndexNuevo.js"></script>
   <script src="../JS/Modelos/models.js"></script>

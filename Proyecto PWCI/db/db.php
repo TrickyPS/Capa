@@ -1,5 +1,6 @@
 <?php
 
+
 class Connection{
 
 public static function  connect() {
@@ -7,6 +8,7 @@ public static function  connect() {
 		$databasename = "capadb";
 		$databaseuser = "admin";
 		$databasepass = "12345678";
+		
 
 		$mysqli = new mysqli($databasehost, $databaseuser, $databasepass, $databasename);
 		if ($mysqli->connect_errno) {

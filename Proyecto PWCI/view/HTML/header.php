@@ -1,34 +1,50 @@
 <?php
+
+
+
 session_start();
 
+$ocultar = "d-none";
 $mostrar="";
 $nombre = "";
 $avatar = "";
+$tipo = "d-none";
+$url = explode('/', $_SERVER['PHP_SELF']);
 if(!isset($_SESSION["user"])){
+    if(array_pop($url) != "IndexNuevo.php"){
+   
     header("Location:" . "Notfound.php");
+    }
 }else{
+
+    if( (time() - $_SESSION["caducate"]) > 1800 ){
+        header("Location:" . "cierrasesion.php");
+    }
+
+    if ($_SESSION["usuario_escuela"] == 1){
+        $tipo = "";
+    }
+
+
     $mostrar = "d-none";
     $nombre = $_SESSION["nombre"];
+    $ocultar="";
 
 
     
     $avatar = $_SESSION["avatar"];
-    if(  $avatar == "data:image/jpeg;base64,"){
-        $avatar =  "../IMG/photoshop.png";
+
+ 
+    if(  strlen($avatar) < 50 ){
+        $avatar =  "../IMG/user.png";
     }
 }
 ?>
 
-
+<script src="../JS/categorias.js" defer></script>
 <div class="d-flex mamando ">
-    <nav class="navbar navbar2 navbar-light bg-light fixed-top">
+    <nav class="navbar navbar2 navbar-light bg-light fixed-top" id="contCat">
 
-            <a class="navbar-brand p-0" href="#">Diseño web</a>
-            <a class="navbar-brand p-0" href="#">Programacion</a>
-            <a class="navbar-brand p-0" href="#">C</a>
-            <a class="navbar-brand p-0" href="#">Ciencias</a>
-            <a class="navbar-brand p-0" href="#">Ciencias</a>
-            <a class="navbar-brand p-0" href="#">Ciencias</a>
     </nav>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -62,21 +78,23 @@ if(!isset($_SESSION["user"])){
                         <a class="nav-link titulo" href="#">Registrate</a>
                     </li>
 
-                    <a class="perfilrandom nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <a class="perfilrandom nav-link dropdown-toggle  <?php echo $ocultar;?>" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         
-                        <img class="imageno m-0 pb-0 rounded-circle" src="<?php echo $avatar; ?>" width="25px">
+                        <img class="imageno m-0 pb-0 rounded-circle mr-1 mb-1" src="<?php echo $avatar; ?>" width="25px" height="25px" style="object-fit:cover;">
                         <?php echo $nombre;  ?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="Historial.html">Cuenta</a>
+                        <a class="dropdown-item" href="Historial.php">Cuenta</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Mis cursos</a>
+                        <a class="dropdown-item" href="Historial.php">Mis cursos</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../../models/cierrasesion.php" onclick="myFunction();">Cerrar sesion</a>
+                        <a class="dropdown-item <?php echo $tipo;?>" href="cms.php">Crear curso</a>
+                        <div class="dropdown-divider  <?php echo $tipo;?>"></div>
+                        <a class="dropdown-item" href="cierrasesion.php" onclick="myFunction();">Cerrar sesion</a>
                         <script>
                  function myFunction() {
-                   debugger
+             
                    sessionStorage.clear();
                      }
               </script>

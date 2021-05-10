@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
    updateDatosPerfil()
-   getAvatar()
+  getAvatar()
 
 
 
@@ -119,7 +119,7 @@ $(document).ready(function(){
            
            },
            error : function(x,y,z){
-            debugger
+            
            }
          });
 
@@ -152,7 +152,7 @@ function updateDatosPerfil(){
 
         function getAvatar(){
             var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
-        debugger
+        
             $.ajax({     
                 type: "POST",
                 url: "../../Controllers/getImageProfile.php",
@@ -164,7 +164,7 @@ function updateDatosPerfil(){
                 success: function(data)
                 {
 
-            debugger
+            
                     sessionStorage.setItem("avatar", data);
 
                     if(data != "\r\ndata:image/jpeg;base64,")
@@ -173,7 +173,7 @@ function updateDatosPerfil(){
                 
                 },
                 error : function(x,y,z){
-                debugger
+                
                 }
             });
 

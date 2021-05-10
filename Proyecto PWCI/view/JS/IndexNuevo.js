@@ -8,7 +8,7 @@ $(document).ready(function(){
     {
         if(contrasenna.length >= 8)
         {	
-            debugger	
+          
             var mayuscula = false;
             var minuscula = false;
             var numero = false;
@@ -114,7 +114,7 @@ $(document).ready(function(){
             var url = form.attr('action');
 
         
-            debugger
+          
              $.ajax({
                type: "POST",
                url: "../../Controllers/iniciasesion.php",
@@ -122,19 +122,29 @@ $(document).ready(function(){
              
                success: function(data)
                {
-                   debugger
+                   
                 var json = jQuery.parseJSON(data);
                 //  console.log(json[0]);
                 var resp = json[0];
                 var usuario = new Usuario(resp.id,resp.nombre,resp.correo,resp.contra,resp.usuario_escuela,null);
                 sessionStorage.setItem("user", JSON.stringify(usuario));
-                debugger;
-               // $("#sesionperfil").append(json[0].nombre); 
-                $("#sesionregistrate").hide(); 
-                $("#sesioninicia").hide(); 
-                $('#exampleModal').modal('hide');
-                $("#infocuenta").removeClass("d-none");
-                alert('Iniciaste correctamente'); // show response from the php script.
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "sesion.php",
+                    data: usuario,
+                  
+                    success: function(data)
+                    {
+                       location.reload();
+                     
+                    }
+                    
+                  });
+              
+
+                
                }
                
              });
@@ -144,7 +154,7 @@ $(document).ready(function(){
      
     var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
     if(usuario != null){
-        debugger
+        
       $("#sesionperfil").text(usuario.nombre); 
       $("#infocuenta").removeClass("d-none");
       $("#sesionregistrate").hide(); 
@@ -161,7 +171,7 @@ $(document).ready(function(){
     $("#rerto").on("submit", function (e) {
 
         const variable = $('#passwordr').val();
-        debugger
+        
         funciono = validar_clave(variable);
 
 
@@ -174,7 +184,7 @@ $(document).ready(function(){
             var url = form.attr('action');
 
         
-             debugger
+             
              $.ajax({     
                type: "POST",
                url: "../../Controllers/registrate.php",

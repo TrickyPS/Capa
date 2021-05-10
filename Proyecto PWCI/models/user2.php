@@ -31,7 +31,7 @@
                       $user[]=$row;
 
                     }
-                     require_once("sesion.php");
+                     
                     
                     return $user; 
                   }
@@ -45,7 +45,7 @@
                     }
 
 
-                  }
+ }
           
 
 
