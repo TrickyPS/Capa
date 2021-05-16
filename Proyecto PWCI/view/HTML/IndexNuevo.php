@@ -19,7 +19,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/toast.css">
   <script src="../JS/Modelos/models.js" defer></script>
+  <script src="../JS/toast.js" defer></script>
   <title>Creative Studios</title>
 </head>
 
@@ -34,15 +36,13 @@ require_once("header.php")
         <div class="col-md-7">
           <div class="inicio-text">
             <h1>Bienvenido a una aventura nueva.</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda a ab quia. Tempora, placeat!
-              Doloribus tempore, delectus quis aperiam et nesciunt? Ad eaque sed facilis dolor temporibus optio, hic
-              tenetur.</p>
+            <p>Busca los cursos que ocupes para aprender y mejorar en tu escuela, trabajo o vida personal. Una nueva experiencia te espera...</p>
 
             <form class=" form2 form-inline">
-              <input class="buscadori form-control mr-sm-2 input-lg" type="search" placeholder="Search"
+              <input class="buscadori form-control mr-sm-2 input-lg" type="search" placeholder="Buscar..."
                 aria-label="Search" style="width: 60%;">
               <button class="btn btn-outline-success" type="submit"
-                style="width:25%; margin-left: 30px;">Search</button>
+                style="width:25%; margin-left: 30px;">Buscar</button>
             </form>
           </div>
         </div>
@@ -68,49 +68,17 @@ require_once("header.php")
   </section>
   <!-- DIVISION DE multiples videos -->
   <section class="tarjeta">
-    <div class="container">
+    <div class="container" >
       <div class="cabezado">
-        <h1 class=" d-flex pt-5 pb-4 mx-auto justify-content-center">Categorias que te pueden interesar</h1>
+        <h1 class=" d-flex pt-5 pb-4 mx-auto justify-content-center">Cursos Más Recientes</h1>
       </div>
 
-      <div class="d-flex row justify-content-center">
-        <div class="col-lg-2 col-md-4 col-sm-8 m-2">
-          <img src="../IMG/photoshop.png" alt="..." width="100%" height="auto">
-          <div class="card-body">
-            <h5 class="card-title">Complete Machine Learning course</h5>
-            <div class="botones text-center mt-3">
-              <a href="../HTML/curso.html" class="btn">View videos</a>
-            </div>
-          </div>
-        </div>
+      
 
-        <div class="col-lg-2 col-md-4 col-sm-8 m-2">
-          <img src="../IMG/photoshop.png" alt="..." width="100%" height="auto">
-          <div class="card-body">
-            <h5 class="card-title">Complete Machine Learning course</h5>
-            <div class="botones text-center mt-3">
-              <a href="../HTML/curso.html" class="btn">View videos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-8 m-2">
-          <img src="../IMG/photoshop.png" alt="..." width="100%" height="auto">
-          <div class="card-body">
-            <h5 class="card-title">Complete Machine Learning course</h5>
-            <div class="botones text-center mt-3">
-              <a href="../HTML/curso.html" class="btn">View videos</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-8 m-2">
-          <img src="../IMG/photoshop.png" alt="..." width="100%" height="auto">
-          <div class="card-body">
-            <h5 class="card-title">Complete Machine Learning course</h5>
-            <div class="botones text-center mt-3">
-              <a href="../HTML/curso.html" class="btn">View videos</a>
-            </div>
-          </div>
-        </div>
+       <div id="addCursos" class="d-flex justify-content-center" >
+
+       </div>
+        
       </div>
   </section>
   <!--  DIVISION DE LOS PRECIOS -->
@@ -129,18 +97,18 @@ require_once("header.php")
                     <li style="font-size:larger">Ahora puedes conseguir justo lo que necesitas</li>
                     <li style="font-size:larger">En vez de adquirir el curso completo,adquiere solamente el video</li>
                   </ul>
-                  <button type="button" class="btn btn-lg  btn-primary">Get started</button>
+                  <button type="button" class="btn btn-lg  btn-primary" onclick="javascript:location.href = 'Categorias.php';">Comenzar</button>
                 </div>
               </div>
               <div class="card mb-4 box-shadow m-5">
                 <div class="card-body m-5">
                   <img src="../IMG/photoshop.png" class="rounded-circle mb-3" alt="Cinque Terre">
-                  <h1 class="card-title pricing-card-title">$1199 <small class="text-muted">/curso</small></h1>
+                  <h1 class="card-title pricing-card-title">$1199 <small class="text-muted">/video</small></h1>
                   <ul class="list-unstyled mt-3 mb-4">
                     <li style="font-size:larger">Ahora puedes conseguir justo lo que necesitas</li>
                     <li style="font-size:larger">En vez de adquirir el curso completo,adquiere solamente el video</li>
                   </ul>
-                  <button type="button" class="btn btn-lg btn-primary">Contact us</button>
+                  <button type="button" class="btn btn-lg btn-primary" onclick="javascript:location.href = 'Categorias.php';">Comenzar</button>
                 </div>
               </div>
             </div>
@@ -152,45 +120,9 @@ require_once("header.php")
   </section>
 
 
-  <footer class=" text-center text-white">
-    <!-- Grid container -->
-    <div class="container p-4 pb-0 mt-3">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i
-            class="fab fa-facebook-f"></i></a>
-
-        <!-- Twitter -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><i
-            class="fab fa-twitter"></i></a>
-
-        <!-- Google -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button"><i
-            class="fab fa-google"></i></a>
-
-        <!-- Instagram -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><i
-            class="fab fa-instagram"></i></a>
-
-        <!-- Linkedin -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i
-            class="fab fa-linkedin-in"></i></a>
-        <!-- Github -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!" role="button"><i
-            class="fab fa-github"></i></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="color: black;">
-      © 2021 Copyright:
-      <a class="text-black" href="https://mdbootstrap.com/" style="color: black;">Creative Studios</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
+  <?php
+require_once("footer.php")
+?>
   <!-- Modal -->
   <div class="modal fade modalon mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">

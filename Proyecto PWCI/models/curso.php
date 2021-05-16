@@ -176,12 +176,90 @@ public static function getCursos($id){
 
 
 
+public static function getAllCursos($limit,$to){
+  $cursos = null;
+  $db = Connection::connect();
+  $consulta = $db->query("CALL SP_GetAllCursos(".$limit.",".$to.")");
+
+  if($consulta != null){
+    
+    while($row = $consulta->fetch_assoc()) {
+
+      $cursos[]=$row;
+
+    }
+     
+    return $cursos; 
+  }
+  else{
+    
+    echo('no funciono');
+  }
+
+  Connection::disconnect($db);
 
 
+}
 
 
+public static function addHistorial($curso,$user){
+  $db = Connection::connect();
+    $db->query("CALL SP_AltaHistorial(".$curso.",".$user.")");
+   
+    Connection::disconnect($db);
+
+}
+
+public static function getHistorial($id){
+  $cursos = null;
+  $db = Connection::connect();
+  $consulta = $db->query("CALL SP_Historial(".$id.")");
+
+  if($consulta != null){
+    
+    while($row = $consulta->fetch_assoc()) {
+
+      $cursos[]=$row;
+
+    }
+     
+    return $cursos; 
+  }
+  else{
+    
+    echo('no funciono');
+  }
+
+  Connection::disconnect($db);
 
 
+}
+
+
+public static function validateCurso($curso,$user){
+  $cursos = null;
+  $db = Connection::connect();
+  $consulta = $db->query("CALL SP_ValidateCurso(".$curso.",".$user.")");
+
+  if($consulta != null){
+    
+    while($row = $consulta->fetch_assoc()) {
+
+      $cursos[]=$row;
+
+    }
+     
+    return $cursos; 
+  }
+  else{
+    
+    echo('no funciono');
+  }
+
+  Connection::disconnect($db);
+
+
+}
 
 
     

@@ -1,4 +1,61 @@
+DELIMITER //
+CREATE  PROCEDURE `SP_ValidateCurso`(
+IN _curso INT,
+IN _usuario INT
+ )
+BEGIN
 
+SELECT `id` from `historial` WHERE `curso` = _curso AND `usuario` = _usuario;
+
+END//
+
+DELIMITER //
+CREATE  PROCEDURE `SP_GetInfoVideo`(
+IN _id INT
+ )
+BEGIN
+
+SELECT `titulo`,`create` from `video` WHERE `id` = _id;
+
+END//
+
+
+DELIMITER //
+CREATE  PROCEDURE `SP_Historial`(
+IN _user INT
+ )
+BEGIN
+
+SELECT DISTINCT C.nameCurso as curso, C.id AS id, C.descripcion AS descripcion, D.nombre AS categoria, C.`create` FROM historial A
+INNER JOIN usuario B ON A.usuario = B.id
+INNER JOIN curso C ON C.id = A.curso
+INNER JOIN categoria D ON D.id = C.categoria
+WHERE A.usuario = _user;
+
+END//
+
+
+DELIMITER //
+CREATE  PROCEDURE `SP_GetAllCursos`(
+IN _limit INT,
+IN _to INT
+ )
+BEGIN
+
+SELECT `id`,`nameCurso`, `costo`,`descripcion` FROM `curso` WHERE `active` = 1 ORDER BY `id`DESC Limit _limit , _to;
+
+END//
+
+DELIMITER //
+CREATE  PROCEDURE `SP_AltaHistorial`(
+IN _curso INT,
+IN _usuario INT
+ )
+BEGIN
+
+INSERT INTO historial (`curso`,`usuario`) VALUES (_curso,_usuario);
+
+END//
 
 
 DELIMITER //
@@ -52,8 +109,8 @@ IN _titulo TEXT(50)
  )
 BEGIN
 
-INSERT INTO `video` (`nivel`,`video`,`titulo`) 
-VALUES (_idNivel,_video,_titulo);
+INSERT INTO `video` (`nivel`,`video`,`titulo`,`create`) 
+VALUES (_idNivel,_video,_titulo,curdate());
 
 END//
 
@@ -63,7 +120,7 @@ IN _id INT
  )
 BEGIN
 
-SELECT `title`,`video` FROM `video` WHERE `id` = _id;
+SELECT `video` FROM `video` WHERE `id` = _id;
 
 END//
 
@@ -184,8 +241,8 @@ IN _categoria INT
  )
 BEGIN
 
-INSERT INTO `curso`(`nameCurso`,`descripcion`,`img`,`costo`,`idUser`,`categoria`) 
-VALUES (_nameCurso,_descripcion,_img,_costo,_idUser,_categoria);
+INSERT INTO `curso`(`nameCurso`,`descripcion`,`img`,`costo`,`idUser`,`categoria`,`create`) 
+VALUES (_nameCurso,_descripcion,_img,_costo,_idUser,_categoria,curdate());
 
 END//
 

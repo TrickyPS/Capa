@@ -101,45 +101,9 @@ require_once("header.php")
         </div>
     </section>
  
-    <footer class=" text-center text-white">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0 mt-3">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!"
-                    role="button"><i class="fab fa-facebook-f"></i></a>
-
-                <!-- Twitter -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!"
-                    role="button"><i class="fab fa-twitter"></i></a>
-
-                <!-- Google -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="#!"
-                    role="button"><i class="fab fa-google"></i></a>
-
-                <!-- Instagram -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="#!"
-                    role="button"><i class="fab fa-instagram"></i></a>
-
-                <!-- Linkedin -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!"
-                    role="button"><i class="fab fa-linkedin-in"></i></a>
-                <!-- Github -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!"
-                    role="button"><i class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="color: black;">
-            © 2021 Copyright:
-            <a class="text-black" href="https://mdbootstrap.com/" style="color: black;">Creative Studios</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+    <?php
+require_once("footer.php")
+?>
 
 <!--Modal curso-->
 <div class="modal fade" id="ModalAddCurso"   tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -168,7 +132,7 @@ require_once("header.php")
                 </div>
                 
                 <div class="form-group">
-                  <label for="CCosto">Costo:</label>
+                  <label for="cCosto">Costo:</label>
                   <input type="number" min="0" class="form-control" id="cCosto" placeholder="Agregar el costo MXN" name="costo">
                  
                 </div>

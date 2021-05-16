@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="../CSS/Video.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
    <!-- Links de fonts -->
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap" rel="stylesheet">
+   <script src="../JS/loadVideo.js" defer></script>
     <title>Creative Studios</title>
 </head>
 
 <body>
+
   
 <?php
 require_once("header.php")
@@ -28,19 +31,22 @@ require_once("header.php")
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-md-8 col-sm-12">
                     <div class=" mr-auto titulon">
-                        <h2>Video de prueba</h2>
+                        <h2 id="titulo"></h2>
                     </div>
-                    <video class="jutify-content-center shadow" src="" width="100%" height="auto" poster=""
-                        style="background-color: black;"></video>
-                    
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis ipsum, temporibus
-                        obcaecati placeat at aut dolorum, ullam corporis alias repellendus consectetur velit et nam,
-                        nostrum est similique aspernatur numquam aperiam voluptatum pariatur cupiditate itaque fugiat
-                        iste? Eligendi dolores voluptatibus vero dolorum
-                        alias eaque repellat sint omnis dolore eos, inventore eum.</p>
+                    <div id="videoCont" class="jutify-content-center shadow bg-dark"    width="100%" height="auto" >
+                    <video data-role="video-player" id="vid"
+        data-logo="../IMG/C.png"
+      data-logo-height="64"
+      data-controls-hide="1000000"
+      
+       data-src=""></video>
+
+</div>
+         
+                    <p id="date"></p>
                 </div>
                 <div class="commentsec mx-auto0 pt-3">
-                    <h1 class="mx-auto">Comment Section</h1>
+                    <h1 class="mx-auto">Comentarios</h1>
                 </div>
                 <div class="col-lg-12 col-md-8 col-sm-12">
                     <div class="card p-3 mt-2">
@@ -116,19 +122,19 @@ require_once("header.php")
                         </div>
                     </div>
                 </div>
-                <form action="" class="col-lg-12 col-md-8 col-sm-12">
-                    <div class="comentarios"></div>
-                    <div class="form-group">
+                    <form action="" class="col-lg-12 col-md-8 col-sm-12">
+                         <div class="comentarios"></div>
+                                    <div class="form-group">
                         <label for="comment">Comentario:</label>
                         <textarea class="form-control" rows="2" id="comment"></textarea>
-                    </div>
-            </div>
-            <div class=" botonsub justify-content-between">
-                <button type="button" class="btn btn-dark">Comentar</button>
-                <button type="button" class="btn btn-dark">Cancelar</button>
-            </div>
+                             </div>
+                                         </div>
+                                <div class=" botonsub justify-content-between">
+                              <button type="button" class="btn btn-dark">Comentar</button>
+                                  <button type="button" class="btn btn-dark">Cancelar</button>
+                            </div>
 
-            </form>
+                     </form>
 
         </div>
         </div>
@@ -172,111 +178,14 @@ require_once("header.php")
         </div>
         <!-- Copyright -->
     </footer>
-    <!-- Modal -->
-    <div class="modal fade modalon mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered  " style="width:400px;">
-            <div class="modal-content  modalon2">
-                <button type="button" class="close ml-auto pr-2" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class=" col-12 ">
-                    <div class="modal-body">
-                        <div class="form-title text-center">
-                            <h4>Inicia sesión</h4>
-                        </div>
-
-
-                        <form>
-                            <div class="form-group pl-5 pr-5">
-                                <a>Correo electronico</a>
-                                <input type="email" class="form-control" id="email1"
-                                    placeholder="Ingresa tu correo electronico">
-                            </div>
-                            <div class="form-group pl-5 pr-5">
-                                <a>Contraseña</a>
-                                <input type="password" class="form-control" id="password1"
-                                    placeholder="Ingresa tu contraseña">
-                            </div>
-                            <div class="grupo text-center pt-3">
-                                <button type="button" class="btn btn-primary btn-md ">Small button</button>
-                            </div>
-                        </form>
-
-
-                        <div class="text-center text-muted delimiter pt-2">or use a social network</div>
-                        <div class="text-center pt-3">
-                            <a class="text-muted text-hover-primary " href="#" target="_blank" title="instagram">
-                                <i class="fab fa-instagram" style="font-size: 25px;"></i>
-                            </a>
-
-                            <a class="text-muted text-hover-primary " href="#" target="_blank" title="facebook">
-                                <i class="fab fa-facebook" style="font-size: 25px;"></i>
-                            </a>
-
-                            <a class="text-muted text-hover-primary " href="#" target="_blank" title="twitter">
-                                <i class="fab fa-twitter" style="font-size: 25px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade modalon mt-5" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered  " style="width:400px;">
-            <div class="modal-content  modalon2">
-                <button type="button" class="close ml-auto pr-2" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class=" col-12 ">
-                    <div class="modal-body">
-                        <div class="form-title text-center">
-                            <h4>Crea una cuenta.</h4>
-                        </div>
-                        <form>
-                            <div class="form-group pl-5 pr-5">
-                                <a>Nombre completo</a>
-                                <input type="text" class="form-control" id="text" placeholder="Escribe tu nombre">
-                            </div>
-                            <div class="form-group pl-5 pr-5">
-                                <a>Correo electronico</a>
-                                <input type="email" class="form-control" id="email1" placeholder="Ingresa tu correo">
-                            </div>
-                            <div class="form-group pl-5 pr-5">
-                                <a>Contraseña</a>
-                                <input type="password" class="form-control" id="password1"
-                                    placeholder="Ingresa tu contraseña">
-                            </div>
-                            <div class="grupo text-center pt-3">
-                                <button type="button" class="btn btn-primary btn-md ">Small button</button>
-                            </div>
-                        </form>
-                        <div class="text-center text-muted delimiter pt-2">or use a social network</div>
-                        <div class="text-center pt-3">
-                            <a class="text-muted text-hover-primary " href="#" target="_blank" title="instagram">
-                                <i class="fab fa-instagram" style="font-size: 25px;"></i>
-                            </a>
-                            <a class="text-muted text-hover-primary " href="#" target="_blank" title="facebook">
-                                <i class="fab fa-facebook" style="font-size: 25px;"></i>
-                            </a>
-                            <a class="text-muted text-hover-primary " href="#" target="_blank" title="twitter">
-                                <i class="fab fa-twitter" style="font-size: 25px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../JS/jquery-3.6.0.min.js"></script>
   <script src="../JS/bootstrap4.js"></script>
   <script src="../JS/popper4.js"></script>
     <!-- Optional JavaScript -->
     <script src="../JS/Video.js"></script>
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 </body>
 
 </html>

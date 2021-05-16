@@ -1,4 +1,4 @@
-var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+var usuario = jQuery.parseJSON(localStorage.getItem("user"));
 getCategorias("categoriaE");
 var idCursoSelect = null;
 var idNivelSelect = null;
@@ -122,7 +122,7 @@ $("#formVideo").on("submit", function (e) {
         formData.append('nivel',idNivelSelect);
         formData.append('titulo',titulo);
         
-        debugger
+        
   $.ajax({
     type: "POST",
     url: "../../Controllers/addVideo.php",
@@ -132,7 +132,7 @@ $("#formVideo").on("submit", function (e) {
     processData: false,
     contentType: false,
     success:function(data){
-      debugger
+      
       location.reload();
       
     },error: function(x,y,z){
@@ -289,15 +289,15 @@ function getNivel(){
       data: {nivel:element.id},
       dataType: 'json',
       success:function(resp){
-        debugger
+        
       if(resp != null){
         resp.forEach(item => {
-          $("#niv" + element.id ).append(`<a class="dropdown-item" href="#">${item.titulo}</a>`);
+          $("#niv" + element.id ).append(`<a class="dropdown-item" >${item.titulo}</a>`);
         });
       }
       }
       ,error:function(x,y,z){
-          debugger
+          
       }});
        });
       
@@ -313,3 +313,45 @@ function getNivel(){
 function updateNivelSelected(id){
   idNivelSelect = id;
 }
+
+
+
+$("#formCurso").on("submit", function (e) {
+  e.preventDefault();
+
+  
+  const nameCurso = $("#cTitle").val();
+  const costo = $("#cCosto").val();
+  const categoria = $("#categoria").val();
+  const descripcion = $("#cDesc").val();
+  
+  
+
+  var formData = new FormData();
+        var files = $('#cImagen')[0].files[0];
+        formData.append('img',files);
+        formData.append('nameCurso',nameCurso);
+        formData.append('costo',costo);
+        formData.append('categoria',categoria);
+        formData.append('descripcion',descripcion);
+        formData.append('id',usuario.id);
+        
+        
+  $.ajax({
+    type: "POST",
+    url: "../../Controllers/addCurso.php",
+    enctype: "multipart/form-data",
+    data: formData,
+
+    processData: false,
+    contentType: false,
+    success:function(data){
+     
+      location.reload();
+      
+    },error: function(x,y,z){
+      alert('error');
+    }
+  });
+  return false;
+});

@@ -43,7 +43,7 @@ if(!isset($_SESSION["user"])){
 
 <script src="../JS/categorias.js" defer></script>
 <div class="d-flex mamando ">
-    <nav class="navbar navbar2 navbar-light bg-light fixed-top" id="contCat">
+    <nav class=" navbar2 navbar-light bg-light fixed-top pl-5 pr-5 " id="contCat">
 
     </nav>
     </div>
@@ -94,8 +94,8 @@ if(!isset($_SESSION["user"])){
                         <a class="dropdown-item" href="cierrasesion.php" onclick="myFunction();">Cerrar sesion</a>
                         <script>
                  function myFunction() {
-             
-                   sessionStorage.clear();
+                    
+                   localStorage.clear();
                      }
               </script>
                     </div>

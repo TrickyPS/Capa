@@ -70,13 +70,13 @@ $(document).ready(function(){
     $(window).on("scroll", function () {
         if($(this).scrollTop()>20){
             $(".navbar").addClass("transicion");
-            $(".navbar-nav").removeClass("ml-auto");
+           // $(".navbar-nav").removeClass("ml-auto");
            
         }
         else{
             $(".navbar").removeClass("transicion");
           
-            $(".navbar-nav").addClass("ml-auto");
+          //  $(".navbar-nav").addClass("ml-auto");
         }
 
         if($(this).scrollTop()>300){
@@ -119,40 +119,46 @@ $(document).ready(function(){
                type: "POST",
                url: "../../Controllers/iniciasesion.php",
                data: form.serialize(), // serializes the form's elements.
-             
+              
                success: function(data)
                {
+               
                    
                 var json = jQuery.parseJSON(data);
+
+                if(isJson(json)){
+                    toastr.error('Error', 'El usuario o la clave son incorrectos.');
+                }
                 //  console.log(json[0]);
                 var resp = json[0];
                 var usuario = new Usuario(resp.id,resp.nombre,resp.correo,resp.contra,resp.usuario_escuela,null);
-                sessionStorage.setItem("user", JSON.stringify(usuario));
+                localStorage.setItem("user", JSON.stringify(usuario));
 
 
                 $.ajax({
                     type: "POST",
                     url: "sesion.php",
                     data: usuario,
-                  
-                    success: function(data)
+                    success: function(r)
                     {
+                        
                        location.reload();
                      
                     }
                     
                   });
               
-
+                 
                 
                }
+            
                
              });
    
            
     });
      
-    var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+    var usuario = jQuery.parseJSON(localStorage.getItem("user"));
     if(usuario != null){
         
       $("#sesionperfil").text(usuario.nombre); 
@@ -169,15 +175,15 @@ $(document).ready(function(){
     //REGISTRARSE
     
     $("#rerto").on("submit", function (e) {
-
+        e.preventDefault(); // avoid to execute the actual submit of the form.
         const variable = $('#passwordr').val();
         
         funciono = validar_clave(variable);
-
+debugger
 
         if(funciono == true){
             
-            e.preventDefault(); // avoid to execute the actual submit of the form.
+            
         
             var form = $(this);
             var muestra = form.serialize();
@@ -191,16 +197,16 @@ $(document).ready(function(){
                data: form.serialize(), // serializes the form's elements.
                success: function(data)
                {
-             
-               
-                alert('Te registraste correctamente') // show response from the php script.
+                
+               $("#exampleModal2").modal("hide");
+                toastr.success('Excelente', 'Registro Exitoso');
                }
              });
     
        
         }else{
 
-alert('Ingresa los datos correctamente');
+            toastr.error('Error', 'Ingresa bien los datos');
 
         }
     
@@ -213,6 +219,54 @@ alert('Ingresa los datos correctamente');
    
 
 
+    $.ajax({
+        type: "GET",
+        url: "../../Controllers/getAllCursos.php?limit=0&to=4",
+        dataType: 'json',
+        success: function(data){
+           
+            var cont = data.length;
+                
+         
+               
+           
+                for(let i = 0; i < cont; i++){
+                    $("#addCursos").append(`
+                    <div class="col-lg-2 col-md-4 col-sm-8 m-2">
+                      <img src="" alt="..." width="100%" height="200px" style="object-fit:cover;" id="${'img' + data[i].id}">
+                      <div class="card-body">
+                        <h5 class="card-title">${data[i].nameCurso}</h5>
+                        <div class="botones text-center mt-3">
+                          <a href="curso.php?id=${data[i].id}" class="btn">View videos</a>
+                        </div>
+                      </div>
+                    `);
+                  $.ajax({
+                    type: "POST",
+                    url: "../../Controllers/getCursoImage.php",
+                    data : {id:data[i].id},
+                
+                    success: function(resp){
+                     
+                      if(data != null){
+                        $('#img' + data[i].id).attr("src", resp);
+                     
+                    }
+                    
+                  
+                    },error:function(x,y,z){
+                      alert (x,y,z);
+                    }
+                  });
+                }
+            
+    
+    
+        },error:function(x,y,z){
+          alert (x,y,z);
+        }
+      });
+    
 
 
 
@@ -220,7 +274,6 @@ alert('Ingresa los datos correctamente');
 
 
 
-    //INICIA SESION
 
 
 
@@ -235,3 +288,13 @@ alert('Ingresa los datos correctamente');
  
   
 });
+
+
+function isJson(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}

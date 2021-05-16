@@ -31,3 +31,26 @@
     transform: translate3d(0px, 0px, 0px) !important; 
     top: auto !important;
 }
+
+.chatFloat{
+    position: fixed;
+    bottom:0px;
+    right: 0px;
+    z-index: 3000;
+}
+
+.chatFloat2{
+    position: fixed;
+    bottom:-350px;
+    right: 0px;
+    z-index: 3000;
+}
+
+.input-custom-button{
+    background-color: rgba(49,92,101,1) !important;
+    color: #fff !important;
+}
+.title{
+    background-color: rgba(49,92,101,1) !important;
+    color: #fff !important;
+}

@@ -28,6 +28,7 @@ CREATE TABLE `curso`(
 `idUser` INT NOT NULL,
 `categoria` INT NOT NULL,
 `active` BOOL NOT NULL default 1,
+`create` datetime NULL,
 FOREIGN KEY (`categoria`) REFERENCES `categoria`(`id`),
 FOREIGN KEY (`idUser`) REFERENCES `usuario`(`id`),
 PRIMARY KEY(`id`)
@@ -47,6 +48,7 @@ CREATE TABLE `video`(
 `id` INT NOT NULL AUTO_INCREMENT,
 `titulo` TEXT(50) NOT NULL,
 `nivel` INT NOT NULL,
+`create` datetime NULL,
 `video` LONGBLOB NOT NULL,
 `active` BOOL NOT NULL default 1,
 FOREIGN KEY (`nivel`) REFERENCES `nivel`(`id`),

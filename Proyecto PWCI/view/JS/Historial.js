@@ -4,7 +4,7 @@ $(document).ready(function(){
    updateDatosPerfil()
   getAvatar()
 
-
+    showCursos();
 
 
 
@@ -86,7 +86,7 @@ $(document).ready(function(){
    const nombre = $("#uName").val();
    const contra = $("#uContra").val();
    // const avatar = $("#fileProfile").val();
-   var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+   var usuario = jQuery.parseJSON(localStorage.getItem("user"));
         var form = $(this);
         var muestra = form.serialize();
         var formData = new FormData();
@@ -112,7 +112,7 @@ $(document).ready(function(){
                // console.log(json[0]);
                var resp = json[0];
                 var usuario = new Usuario(resp.id,resp.nombre,resp.correo,resp.contra,resp.usuario_escuela,null);
-                sessionStorage.setItem("user", JSON.stringify(usuario));
+                localStorage.setItem("user", JSON.stringify(usuario));
                 updateDatosPerfil()
                 getAvatar()
            // $('#image').attr("src", data);
@@ -136,7 +136,7 @@ $(document).ready(function(){
 });
 
 function updateDatosPerfil(){
-    var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+    var usuario = jQuery.parseJSON(localStorage.getItem("user"));
     $("#uName").val(usuario.nombre);
     $("#uEmail").val(usuario.correo);
     $("#uContra").val(usuario.contra);
@@ -151,7 +151,7 @@ function updateDatosPerfil(){
 }
 
         function getAvatar(){
-            var usuario = jQuery.parseJSON(sessionStorage.getItem("user"));
+            var usuario = jQuery.parseJSON(localStorage.getItem("user"));
         
             $.ajax({     
                 type: "POST",
@@ -165,7 +165,7 @@ function updateDatosPerfil(){
                 {
 
             
-                    sessionStorage.setItem("avatar", data);
+                    localStorage.setItem("avatar", data);
 
                     if(data != "\r\ndata:image/jpeg;base64,")
                     $('#image').attr("src", data);
@@ -178,3 +178,68 @@ function updateDatosPerfil(){
             });
 
         }
+
+
+
+function showCursos(){
+     var usuario = jQuery.parseJSON(localStorage.getItem("user"));
+debugger
+     $.ajax({
+        type: "POST",
+        url: "../../Controllers/getHistorial.php",
+        data : {id:usuario.id},
+        dataType: 'json',
+        success: function(data){
+         
+            if(data !=null){
+                    data.forEach(element => {
+                        $("#addCursos").append(`
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="card flex-sm-row  flex-md-row flex-md-row mb-4 box-shadow h-md-250 ">
+                        <img class="shadow card-img-right flex-auto  mx-auto " alt="" style="width: 200px; height:200px; object-fit:cover;"
+                            src="" data-holder-rendered="true" id="${'imgCurso' + element.id}">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <strong class="d-inline-block mb-2 text-primary">${element.categoria}</strong>
+                            <h3 class="mb-0">
+                                <a class="text-dark" href="#">${element.curso}</a>
+                            </h3>
+                            <div class="mb-1 text-muted">${(element.create).substring(0,10)}</div>
+                            <p class="card-text mb-auto">${element.descripcion}</p>
+                            <a type="button" href="curso.php?id=${element.id}" class="btn btn-dark  mx-auto btn-lg mt-2" style="width:150px;color:#FFF" >Ver
+                                curso</a>
+                        </div>
+                    </div>
+                </div>
+                        
+                        `);
+
+                        $.ajax({
+                            type: "POST",
+                            url: "../../Controllers/getCursoImage.php",
+                            data : {id:element.id},
+                        
+                            success: function(resp){
+                             
+                              if(data != null){
+                                $('#imgCurso' + element.id).attr("src", resp);
+                             
+                            }
+                            
+                          
+                            },error:function(x,y,z){
+                              alert (x,y,z);
+                            }
+                          });
+                        
+                    });
+            }else{
+                $("#addCursos").html("<h2> No tienes cursos agregados </h2>")
+            }
+
+         $("#addCursos").append
+        },error:function(x,y,z){
+          alert (x,y,z);
+        }
+      });
+   
+}
