@@ -262,14 +262,22 @@ public static function validateCurso($curso,$user){
 }
 
 
-    
+public static function addPuntuacion($user,$curso,$pts){
+$db = Connection::connect();
+$db->query("CALL SP_Calificar(".$user.",".$curso.",".$pts.")");
+Connection::disconnect($db);
 
-
+}
+public static function getPuntuacion($curso){
+$db = Connection::connect();
+$consulta = $db->query("CALL SP_GetPuntuacion(".$curso.")");
+$cant = mysqli_fetch_array($consulta);
+return $cant["suma"];
+Connection::disconnect($db);
 }
 
 
-
-
+}
 
 
 

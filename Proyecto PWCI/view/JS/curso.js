@@ -32,7 +32,7 @@ if(!vars.activate){
   });
 }
 
-debugger
+
 if(vars.activate){
   $.ajax({
     type: "POST",
@@ -122,6 +122,51 @@ $("#del").html("$ " +(parseInt(data.costo) * 1.20).toFixed(2));
     }
   });
 
+
+  
+
+  $.ajax({
+    type: "POST",
+    url: "../../Controllers/getPuntuacion.php",
+    data: {curso:vars.id},
+    success: function(data){
+       var resp = JSON.parse(data);
+      if(resp){
+        var pts = parseFloat(resp).toFixed(2);
+        $("#pts").append(`<input data-role="rating" data-value="${pts}" data-static="true" data-message="(${pts})"></input>`);
+      }else{
+        $("#pts").append(`<input data-role="rating" data-value="0" data-static="true" data-message="(0)"></input>`);
+      }
+
+    },error:function(x,y,z){
+
+       
+    }
+  });
+
+  $("#btnCal").click(function(){
+    $.ajax({
+      type: "POST",
+      url: "../../Controllers/addPuntuacion.php",
+      data: {curso:vars.id,usuario:usuario.id,pts:$("#cPuntos").val()},
+      success: function(data){
+         var resp = JSON.parse(data);
+         $("#pts").html("");
+         $("#calificate").modal("hide");
+         $("#cPuntos").val("");
+        if(resp){
+          var pts = parseFloat(resp).toFixed(2);
+          $("#pts").append(`<input data-role="rating" data-value="${(pts)}" data-static="true" data-message="(${pts})"></input>`);
+        }else{
+          $("#pts").append(`<input data-role="rating" data-value="0" data-static="true" data-message="(0)"></input>`);
+        }
+  
+      },error:function(x,y,z){
+  
+         
+      }
+    });
+  });
 
 
     $.ajax({

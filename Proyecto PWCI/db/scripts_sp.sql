@@ -1,3 +1,26 @@
+DELIMITER //
+CREATE  PROCEDURE `SP_GetPuntuacion`(
+IN _curso INT
+ )
+BEGIN
+
+SELECT AVG(calificacion) As suma FROM calificacion WHERE curso = _curso;
+
+END//
+
+
+DELIMITER //
+CREATE  PROCEDURE `SP_Calificar`(
+IN _usuario INT,
+IN _curso INT,
+IN _calificacion INT
+ )
+BEGIN
+
+INSERT INTO calificacion(calificacion,usuario,curso) VALUES (_calificacion,_usuario,_curso);
+
+END//
+
 
 DELIMITER //
 CREATE  PROCEDURE `SP_Comentar`(
@@ -12,6 +35,8 @@ SELECT A.`mensaje` AS mensaje ,A.`usuario` AS usuario,A.`create` AS `create`, B.
   WHERE `curso` = _curso;
 
 END//
+
+
 
 DELIMITER //
 CREATE  PROCEDURE `SP_GetComentarios`(

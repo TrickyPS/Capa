@@ -10,6 +10,7 @@
 
        });
       },error:function(x,y,z){
+        debugger
         alert (x,y,z);
       }
     });

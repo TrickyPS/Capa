@@ -68,7 +68,7 @@ require_once("header.php");
                                 <h4 id="nameCurso">Nombre del producto</h4>
                                 <div class="progress" id="progress" style="height:18px;"></div>
                             </div>
-                            <input data-role="rating" data-value="0" data-static="true" data-message="(0)">
+                            <div id="pts"></div>
 
                       <?php 
               if(!isset($_GET["activate"])){
@@ -167,22 +167,19 @@ require_once("header.php");
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form id="formPuntos">
+        <div id="formPuntos">
             <div class="modal-body">
             
                 <div class="form-group">
                   <label for="cPuntos">Puntos:</label>
                   <input type="number" min="0" max="5" class="form-control" id="cPuntos" >
                 </div>
-              
-
-            
             </div>
             <div class="modal-footer">
           
-                <button type="submit" class="btn btn-main">Agregar</button>
+                <button type="submit" class="btn btn-main" id="btnCal">Calificar</button>
              </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
