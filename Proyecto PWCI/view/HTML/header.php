@@ -57,7 +57,7 @@ if(!isset($_SESSION["user"])){
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="overflow:visible;">
 
             <form class=" form1 form-inline mx-auto justify-content-center">
                 <input class="buscador form-control mr-sm-2 justify-content-center" type="search" placeholder="Search"

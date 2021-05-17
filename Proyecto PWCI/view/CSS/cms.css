@@ -25,6 +25,18 @@
     border-color: rgba(50,38,38,1);
 }
 
+.btn-main:hover{
+    color: #fff;
+    background-color: rgba(49,92,101,1);
+    border-color: rgba(49,92,101,1);
+}
+
+.btn-second:hover{
+    color: #fff;
+    background-color: rgba(50,38,38,1);
+    border-color: rgba(50,38,38,1);
+}
+
 .dropN{
     width: -webkit-fill-available !important;
     position: absolute ;

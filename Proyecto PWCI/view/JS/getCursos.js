@@ -1,3 +1,5 @@
+
+
 $.ajax({
     type: "GET",
     url: "../../Controllers/getAllCursos.php?limit=0&to=8",
@@ -8,14 +10,13 @@ $.ajax({
         $("#part2Curso").html("");
         var cont = data.length;
             
-     
-            for(let i = 0; i < 4; i++){
+            for(let i = 0; i < 4; i++){  
             
                 $("#part1Curso").append(` <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="product-grid">
                   <div class="product-image">
                     <a href="#">
-                      <img class="pic-1" id="${"imgCurso" + data[i].id}" style="height:300px !important; object-fit:cover;" src="">
+                      <img class="pic-1" id="${"imgCurso" + data[i].id}"   style="height:300px !important; object-fit:cover;" src="">
         
                     </a>
                     <ul class="social">
@@ -50,7 +51,7 @@ $.ajax({
                  
                   if(data != null){
                     $('#imgCurso' + data[i].id).attr("src", resp);
-                 
+                
                 }
                 
               

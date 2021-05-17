@@ -1,3 +1,29 @@
+
+DELIMITER //
+CREATE  PROCEDURE `SP_Comentar`(
+IN _usuario INT,
+IN _curso INT,
+IN _mensaje TEXT(250)
+ )
+BEGIN
+
+INSERT INTO comentario(usuario,curso,mensaje,`create`) VALUES (_usuario,_curso,_mensaje,curdate());
+SELECT A.`mensaje` AS mensaje ,A.`usuario` AS usuario,A.`create` AS `create`, B.nombre AS nombre FROM comentario A INNER JOIN usuario B ON A.usuario = B.id
+  WHERE `curso` = _curso;
+
+END//
+
+DELIMITER //
+CREATE  PROCEDURE `SP_GetComentarios`(
+IN _curso INT
+ )
+BEGIN
+
+SELECT A.`mensaje` AS mensaje ,A.`usuario` AS usuario,A.`create` AS `create`, B.nombre AS nombre FROM comentario A INNER JOIN usuario B ON A.usuario = B.id
+  WHERE `curso` = _curso;
+
+END//
+
 DELIMITER //
 CREATE  PROCEDURE `SP_ValidateCurso`(
 IN _curso INT,
@@ -8,6 +34,21 @@ BEGIN
 SELECT `id` from `historial` WHERE `curso` = _curso AND `usuario` = _usuario;
 
 END//
+
+DELIMITER //
+CREATE  PROCEDURE `SP_AltaProgress`(
+IN _usuario INT,
+IN _video INT
+ )
+BEGIN
+
+INSERT INTO `progress`(`usuario`,`video`) VALUES (_usuario,_video);
+
+END//
+
+
+
+
 
 DELIMITER //
 CREATE  PROCEDURE `SP_GetInfoVideo`(

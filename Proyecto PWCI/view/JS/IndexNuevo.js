@@ -232,7 +232,7 @@ debugger
            
                 for(let i = 0; i < cont; i++){
                     $("#addCursos").append(`
-                    <div class="col-lg-2 col-md-4 col-sm-8 m-2">
+                    <div class="col-lg-2 col-md-4 col-sm-12 m-2">
                       <img src="" alt="..." width="100%" height="200px" style="object-fit:cover;" id="${'img' + data[i].id}">
                       <div class="card-body">
                         <h5 class="card-title">${data[i].nameCurso}</h5>

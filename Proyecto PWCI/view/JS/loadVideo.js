@@ -4,7 +4,7 @@ var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
     vars[key] = value;
   });
 
-  
+  var usuario = jQuery.parseJSON(localStorage.getItem("user"));
   
 
   $.ajax({
@@ -44,6 +44,16 @@ $("#vid").attr('src',data);
 
 var vid = document.getElementById("vid");
 vid.onended = function() {
-  
+  $.ajax({
+    type: "POST",
+    url: "../../Controllers/addProgress.php",
+    data: {video:vars.watch,usuario:usuario.id},
+    success: function(data){
+     
+   
+    },error:function(x,y,z){
+      alert (x,y,z);
+    }
+  });
 };
     

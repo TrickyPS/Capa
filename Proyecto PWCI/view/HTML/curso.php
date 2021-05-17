@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <!--  Link de css -->
-    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+   
     <link rel="stylesheet" href="../CSS/Video.css">
     <link rel="stylesheet" href="../CSS/cms.css">
     <!-- Bootstrap CSS -->
@@ -25,6 +25,7 @@
 </head>
 
 <body>
+<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro.min.css">
 <?php
 if(!isset($_GET["activate"])){
     ?>
@@ -63,16 +64,11 @@ require_once("header.php");
                         <div class="p-4">
 
                             <div class="mb-3">
-
+                          
                                 <h4 id="nameCurso">Nombre del producto</h4>
+                                <div class="progress" id="progress" style="height:18px;"></div>
                             </div>
-                            <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                      </ul>
+                            <input data-role="rating" data-value="0" data-static="true" data-message="(0)">
 
                       <?php 
               if(!isset($_GET["activate"])){
@@ -108,16 +104,10 @@ require_once("header.php");
                                     <i class="fas fa-money-check-alt"></i>
                                 </button>
                                 <?php 
-              }else{
-              ?>
-
-                          <button class="ml-2 btn btn-main btn-md my-0 p waves-effect waves-light"
-                                    type="submit" data-toggle="modal" data-target="#calificate">Calificar
-                                    
-                                </button>
-              <?php 
-              }
-              ?>
+              }  ?>
+            
+             <div id="calificar" >
+            </div>
                             </div>
 
                         </div>
@@ -155,99 +145,15 @@ require_once("header.php");
                 <div class="commentsec mx-auto0 pt-3">
                     <h1 class="mx-auto">Comentarios</h1>
                 </div>
-                <div class="col-lg-12 col-md-8 col-sm-12">
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img
-                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
-                                    class="user-img rounded-circle mr-2"> <span><small
-                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
-                                        class="font-weight-bold">El mejor video que he visto acerca de
-                                        photoshop</small></span>
-                            </div>
-                            <small>1 min ago</small>
-                        </div>
-                    </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img
-                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
-                                    class="user-img rounded-circle mr-2"> <span><small
-                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
-                                        class="font-weight-bold">El mejor video que he visto acerca de
-                                        photoshop</small></span>
-                            </div>
-                            <small>1 min ago</small>
-                        </div>
-                    </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img
-                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
-                                    class="user-img rounded-circle mr-2"> <span><small
-                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
-                                        class="font-weight-bold">El mejor video que he visto acerca de
-                                        photoshop</small></span>
-                            </div>
-                            <small>1 min ago</small>
-                        </div>
-                    </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img
-                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
-                                    class="user-img rounded-circle mr-2"> <span><small
-                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
-                                        class="font-weight-bold">El mejor video que he visto acerca de
-                                        photoshop</small></span>
-                            </div>
-                            <small>1 min ago</small>
-                        </div>
-                    </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img
-                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
-                                    class="user-img rounded-circle mr-2"> <span><small
-                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
-                                        class="font-weight-bold">El mejor video que he visto acerca de
-                                        photoshop</small></span>
-                            </div>
-                            <small>1 min ago</small>
-                        </div>
-                    </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img
-                                    src="https://i.imgur.com/ZSkeqnd.jpg" width="30"
-                                    class="user-img rounded-circle mr-2"> <span><small
-                                        class="font-weight-bold text-primary">@rashida_jones :</small> <small
-                                        class="font-weight-bold">El mejor video que he visto acerca de
-                                        photoshop</small></span>
-                            </div>
-                            <small>1 min ago</small>
-                        </div>
-                    </div>
+                <div class="col-lg-12 col-md-8 col-sm-12" id="contComent" >
+                   
                 </div>
-              <?php 
-              if(isset($_GET["activate"])){
-              ?>
-                <form action="" class="col-lg-12 col-md-8 col-sm-12">
-                         <div class="comentarios">
-                                    <div class="form-group">
-                        <label for="comment">Comentario:</label>
-                        <textarea class="form-control" rows="2" id="comment"></textarea>
-                             </div>
-                                         </div>
-                                <div class=" botonsub justify-content-between">
-                              <button type="button" class="btn btn-dark">Comentar</button>
-                                  <button type="button" class="btn btn-dark">Cancelar</button>
-                            </div>
 
-                     </form>
-                     <?php 
-              }
-              ?>
+                
+              <!---
+            form para comentar
+            --->
+            <div id="comentar"></div>
 
     </div>
 

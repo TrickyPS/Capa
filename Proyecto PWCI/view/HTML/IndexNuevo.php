@@ -75,7 +75,7 @@ require_once("header.php")
 
       
 
-       <div id="addCursos" class="d-flex justify-content-center" >
+       <div id="addCursos" class="row" >
 
        </div>
         

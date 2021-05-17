@@ -56,7 +56,7 @@ PRIMARy KEY (`id`)
 );
 
 
-CREATE TABLE `comentarioCurso`(
+CREATE TABLE `chat`(
 `id` INT NOT NULL AUTO_INCREMENT,
 `comentario` TEXT(250) NOT NULL,
 `estudiante` BOOL NOT NULL,
@@ -88,11 +88,12 @@ FOREIGN KEY (`curso`) REFERENCES `curso`(`id`),
 PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `chat`(
+CREATE TABLE `comentario`(
 `id` INT NOT NULL AUTO_INCREMENT,
 `mensaje` TEXT(250) NOT NULL,
 `usuario` INT NOT NULL,
 `curso` INT NOT NULL,
+`create` DATETIME NOT NULL,
 FOREIGN KEY (`usuario`) REFERENCES `usuario`(`id`),
 FOREIGN KEY (`curso`) REFERENCES `curso`(`id`),
 PRIMARY KEY (`id`)
@@ -107,5 +108,14 @@ CREATE TABLE `calificacion`(
 `curso` INT NOT NULL,
 FOREIGN KEY (`usuario`) REFERENCES `usuario`(`id`),
 FOREIGN KEY (`curso`) REFERENCES `curso`(`id`),
+PRIMARY KEY(`id`)
+);
+
+CREATE TABLE `progress`(
+`id` INT NOT NULL AUTO_INCREMENT,
+`video` INT NOT NULL ,
+`usuario` INT NOT NULL,
+FOREIGN KEY (`usuario`) REFERENCES `usuario`(`id`),
+FOREIGN KEY (`video`) REFERENCES `video`(`id`),
 PRIMARY KEY(`id`)
 );
