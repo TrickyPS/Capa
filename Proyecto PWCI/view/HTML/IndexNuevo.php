@@ -75,7 +75,7 @@ require_once("header.php")
 
       
 
-       <div id="addCursos" class="row" >
+       <div id="addCursos" class="row justify-content-center" >
 
        </div>
         
@@ -87,29 +87,9 @@ require_once("header.php")
       <div class="row medio justify-content-center mt-4 border rounded">
         <div class="col-12">
           <div class="container ">
-            <div class=" mb-3 text-center">
-              <div class="card mb-4 box-shadow m-5">
-
-                <div class="card-body m-5">
-                  <img src="../IMG/photoshop.png" class="rounded-circle mb-3" alt="Cinque Terre">
-                  <h1 class="card-title pricing-card-title">$300 <small class="text-muted">/video</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li style="font-size:larger">Ahora puedes conseguir justo lo que necesitas</li>
-                    <li style="font-size:larger">En vez de adquirir el curso completo,adquiere solamente el video</li>
-                  </ul>
-                  <button type="button" class="btn btn-lg  btn-primary" onclick="javascript:location.href = 'Categorias.php';">Comenzar</button>
-                </div>
-              </div>
-              <div class="card mb-4 box-shadow m-5">
-                <div class="card-body m-5">
-                  <img src="../IMG/photoshop.png" class="rounded-circle mb-3" alt="Cinque Terre">
-                  <h1 class="card-title pricing-card-title">$1199 <small class="text-muted">/video</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li style="font-size:larger">Ahora puedes conseguir justo lo que necesitas</li>
-                    <li style="font-size:larger">En vez de adquirir el curso completo,adquiere solamente el video</li>
-                  </ul>
-                  <button type="button" class="btn btn-lg btn-primary" onclick="javascript:location.href = 'Categorias.php';">Comenzar</button>
-                </div>
+            <div class=" mb-3 text-center"  id="contBest">
+             
+           
               </div>
             </div>
           </div>

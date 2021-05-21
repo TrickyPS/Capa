@@ -125,6 +125,34 @@ class Video{
                 }
 
 
+                public static function getPN($id){
+                  $video = null;
+                  $db = Connection::connect();
+              
+                  $consulta = $db->query("CALL SP_GetPN(".$id.")");
+              
+              
+                 
+                  if($consulta != null){
+      
+                    while($row = $consulta->fetch_assoc()) {
+              
+                      $video[]=$row;
+              
+                    }
+                     
+                    return $video; 
+                  }
+                  else{
+                    
+                    echo('no funciono');
+                  }
+              
+                  Connection::disconnect($db);
+              
+                    }
+  
+
 
 }
 

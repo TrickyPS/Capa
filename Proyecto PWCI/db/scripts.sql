@@ -59,10 +59,12 @@ PRIMARy KEY (`id`)
 CREATE TABLE `chat`(
 `id` INT NOT NULL AUTO_INCREMENT,
 `comentario` TEXT(250) NOT NULL,
-`estudiante` BOOL NOT NULL,
-`usuario` INT NOT NULL,
+`to` INT NOT NULL,
 `curso` INT NOT NULL,
+`usuario` INT NOT NULL,
+`create` date NOT NULL,
 FOREIGN KEY (`usuario`) REFERENCES `usuario`(`id`),
+FOREIGN KEY (`to`) REFERENCES `usuario`(`id`),
 FOREIGN KEY (`curso`) REFERENCES `curso`(`id`),
 PRIMARY KEY (`id`)
 );

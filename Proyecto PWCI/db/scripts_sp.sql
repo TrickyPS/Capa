@@ -1,3 +1,55 @@
+CREATE DEFINER=`admin`@`%` PROCEDURE `SP_MensajeMaestro`(
+IN _usuario INT
+)
+BEGIN
+select DISTINCT 
+ chat.curso as cursoC,
+chat.usuario as usuarioC,
+ usuario.nombre as nombre,
+ usuario.id as idUser,
+ curso.nameCurso as cursoName
+ from chat LEFT JOIN usuario on chat.usuario = usuario.id
+ LEFT JOIN curso ON curso.id = chat.curso
+   where chat.to =_usuario;
+END
+
+
+DELIMITER //
+CREATE DEFINER=`admin`@`%` PROCEDURE `SP_MensajeUsuario`(
+IN _usuario INT,
+IN _curso INT,
+In _to INT
+)
+BEGIN
+select chat.id as identificadorC,
+ chat.comentario as comentarioC,
+ chat.usuario as usuarioC,
+chat.`to` as `to`,
+ usuario.nombre as nombre,
+ curso.nameCurso as nameCurso,
+ DATE_FORMAT(chat.`create`, "%M %d %Y") as tiempo from chat 
+ LEFT JOIN curso 
+ ON chat.curso = curso.id 
+ LEFT JOIN usuario on chat.`to` = usuario.id where chat.`to` = _to and chat.usuario = _usuario and chat.curso = _curso
+ OR  chat.`to` = _usuario and chat.usuario = _to and chat.curso = _curso;
+END//
+
+DELIMITER //
+CREATE DEFINER=`admin`@`%` PROCEDURE `SP_Mensaje`(
+IN _comentario TEXT(150),
+IN _curso INT,
+IN _usuario INT,
+IN _to INT
+)
+BEGIN
+INSERT INTO `capadb`.`chat`(comentario,curso,usuario,`create`,`to`)VALUES(_comentario,_curso,_usuario,curdate(),_to);
+
+END//
+
+
+
+
+
 DELIMITER //
 CREATE  PROCEDURE `SP_GetPuntuacion`(
 IN _curso INT
@@ -8,6 +60,14 @@ SELECT AVG(calificacion) As suma FROM calificacion WHERE curso = _curso;
 
 END//
 
+DELIMITER //
+CREATE  PROCEDURE `SP_GetBest`(
+ )
+BEGIN
+
+SELECT A.curso as curso,B.idUser as idUser, B.nameCurso as nameCurso, B.costo as costo, Count(curso) as total from historial A INNER JOIN  curso B ON A.curso = B.id GROUP BY curso ORDER BY total DESC LIMIT 2;
+
+END//
 
 DELIMITER //
 CREATE  PROCEDURE `SP_Calificar`(
@@ -108,7 +168,7 @@ IN _to INT
  )
 BEGIN
 
-SELECT `id`,`nameCurso`, `costo`,`descripcion` FROM `curso` WHERE `active` = 1 ORDER BY `id`DESC Limit _limit , _to;
+SELECT `id`,`nameCurso`, `costo`,`descripcion`, `idUser` FROM `curso` WHERE `active` = 1 ORDER BY `id`DESC Limit _limit , _to;
 
 END//
 

@@ -90,6 +90,8 @@ if(!isset($_SESSION["user"])){
                         <a class="dropdown-item" href="Historial.php">Mis cursos</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item <?php echo $tipo;?>" href="cms.php">Crear curso</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item <?php echo $tipo;?>" href="chat.php">Sobre cursos</a>
                         <div class="dropdown-divider  <?php echo $tipo;?>"></div>
                         <a class="dropdown-item" href="cierrasesion.php" onclick="myFunction();">Cerrar sesion</a>
                         <script>

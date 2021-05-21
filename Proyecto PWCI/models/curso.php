@@ -277,6 +277,41 @@ Connection::disconnect($db);
 }
 
 
+
+public static function getBest(){
+  $cursos = null;
+  $db = Connection::connect();
+  $consulta = $db->query("CALL SP_GetBest()");
+
+  if($consulta != null){
+    
+    while($row = $consulta->fetch_assoc()) {
+
+      $cursos[]=$row;
+
+    }
+     
+    return $cursos; 
+  }
+  else{
+    
+    echo('no funciono');
+  }
+
+  Connection::disconnect($db);
+
+
+}
+
+
+
+
+
+
+
+
+
+
 }
 
 

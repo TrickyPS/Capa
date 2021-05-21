@@ -9,6 +9,10 @@ var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
 
   var usuario = jQuery.parseJSON(localStorage.getItem("user"));
 
+
+
+ 
+
 if(!vars.activate){
   $.ajax({
     type: "POST",
@@ -89,7 +93,6 @@ if(vars.activate){
     data: {id:vars.id},
     dataType: 'json',
     success: function(data){
-       
 $("#nameCurso").html(data.nameCurso);
 $("#descripcion").html(data.descripcion);
 $("#costo").html("$ " + data.costo);
@@ -361,3 +364,82 @@ $.ajax({
       
     }
   });
+
+
+
+$(document).ready(function(){
+  var player = Metro.getPlugin("#chatToggle",'chat');
+  
+  $.ajax({
+    type: "POST",
+    url: "../../Controllers/getChatEstudiante.php",
+    data: {curso:vars.id,usuario:usuario.id,to:vars.idUserCurso},
+    dataType:"json",
+    async:false,
+    success: function(data){
+      
+      
+      data.forEach(element => {
+        $.ajax({     
+          type: "POST",
+          url: "../../Controllers/getImageProfile.php",
+          
+          data: {'id': element.usuarioC} , 
+          success: function(resp)
+          {
+      
+      
+              if(resp == "\r\ndata:image/jpeg;base64,"){
+                resp = "../IMG/user.png"
+              }
+              
+
+              var pos = "left"
+              if(element.usuarioC == usuario.id)
+              pos="right"
+              player.add( {
+                id:element.identificadorC,
+                name:usuario.nombre,
+                time: element.tiempo,
+                avatar:resp,
+                position:pos,
+                text: element.comentarioC
+            })
+      
+          
+          },
+          error : function(x,y,z){
+          
+          }
+      });
+       
+      });
+    }
+    ,error: function(x,y,z){
+      debugger
+    }
+    });
+
+  
+  
+
+
+  });
+
+
+function onSend(msg){
+  var message = new Message(msg.id,msg.name,msg.time,msg.avatar,msg.position,msg.text);
+
+  $.ajax({
+    type: "POST",
+    url: "../../Controllers/addChat.php",
+    data: {curso:vars.id,usuario:usuario.id,mensaje:message.text,to:vars.idUserCurso},
+    success: function(data){
+      location.reload();
+    }
+    ,error: function(x,y,z){
+      debugger
+    }
+    });
+
+}

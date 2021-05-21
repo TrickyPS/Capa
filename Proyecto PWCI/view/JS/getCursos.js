@@ -20,7 +20,7 @@ $.ajax({
         
                     </a>
                     <ul class="social">
-                      <li><a href="curso.php?id=${data[i].id}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                      <li><a href="curso.php?id=${data[i].id}&idUserCurso=${data[i].idUser}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                       
                       
                     </ul>
@@ -71,7 +71,7 @@ $.ajax({
         
                     </a>
                     <ul class="social">
-                    <li><a href="curso.php?id=${data[i].id}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                    <li><a href="curso.php?id=${data[i].id}&idUserCurso=${data[i].idUser}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                     </ul>
                     <span class="product-new-label">Sale</span>
                     <span class="product-discount-label">20%</span>
@@ -139,7 +139,7 @@ $.ajax({
             
                         </a>
                         <ul class="social">
-                        <li><a href="curso.php?id=${data[i].id}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="curso.php?id=${data[i].id}&idUserCurso=${data[i].idUser}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                         </ul>
                         <span class="product-new-label">Sale</span>
                         <span class="product-discount-label">20%</span>
@@ -188,7 +188,7 @@ $.ajax({
             
                         </a>
                         <ul class="social">
-                        <li><a href="curso.php?id=${data[i].id}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="curso.php?id=${data[i].id}&idUserCurso=${data[i].idUser}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                         </ul>
                         <span class="product-new-label">Sale</span>
                         <span class="product-discount-label">20%</span>

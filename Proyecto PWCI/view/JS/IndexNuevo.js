@@ -237,7 +237,7 @@ debugger
                       <div class="card-body">
                         <h5 class="card-title">${data[i].nameCurso}</h5>
                         <div class="botones text-center mt-3">
-                          <a href="curso.php?id=${data[i].id}" class="btn">View videos</a>
+                          <a href="curso.php?id=${data[i].id}&idUserCurso=${data[i].idUser}" class="btn">View videos</a>
                         </div>
                       </div>
                     `);
@@ -270,7 +270,55 @@ debugger
 
 
 
+      $.ajax({
+        type: "POST",
+        url: "../../Controllers/getBest.php",
+        dataType: 'json',
+        success: function(data){
+           debugger
+            var cont = data.length;
+                
+           
+                for(let i = 0; i < cont; i++){
+                    $("#contBest").append(`
+                    <div class="card mb-4 box-shadow m-5">
 
+                    <div class="card-body m-5">
+                      <img src="../IMG/photoshop.png" id="imgB${data[i].curso}" width="500" height="500" style="object-fit:cover" class="rounded-circle mb-3" alt="Cinque Terre">
+                      <h1 class="card-title pricing-card-title">$ ${data[i].costo}<small class="text-muted"></small></h1>
+                      <ul class="list-unstyled mt-3 mb-4">
+                        <li style="font-size:larger">Consigue los mejores cursos</li>
+                        <li style="font-size:larger">Este curso es el top # ${i+1} : <strong>${data[i].nameCurso}</strong> </li>
+                      </ul>
+                      <button type="button" class="btn btn-lg  btn-primary" onclick="javascript:location.href = 'curso.php?id=${data[i].curso}&idUserCurso=${data[i].idUser}';">VER</button>
+                    </div>
+                  </div>
+                    `);
+                  $.ajax({
+                    type: "POST",
+                    url: "../../Controllers/getCursoImage.php",
+                    data : {id:data[i].curso},
+                
+                    success: function(resp){
+                     
+                      if(data != null){
+                        $('#imgB' + data[i].curso).attr("src", resp);
+                     
+                    }
+                    
+                  
+                    },error:function(x,y,z){
+                      alert (x,y,z);
+                    }
+                  });
+                }
+            
+    
+    
+        },error:function(x,y,z){
+          alert (x,y,z);
+        }
+      });
 
 
 

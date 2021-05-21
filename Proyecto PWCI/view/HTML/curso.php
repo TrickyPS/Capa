@@ -13,14 +13,16 @@
     <link rel="stylesheet" href="../CSS/cms.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
-    
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
     <!-- Links de fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/card.css">
     <script src="../JS/card.js" defer></script>
+    <script src="../JS/Modelos/models.js" defer></script>
     <script src="../JS/curso.js" defer></script>
+
     <title>Creative Studios</title>
 </head>
 
@@ -35,6 +37,7 @@ class="chatFloat"
   data-width="300"
   data-height="400"
   data-title="Chat "
+  data-on-send="onSend"
 ></div>
 <?php } ?>
 
@@ -334,7 +337,7 @@ require_once("footer.php")
   <script src="../JS/popper4.js"></script>
     <!-- Optional JavaScript -->
     <script src="../JS/Video.js"></script>
-    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    
 </body>
 
 </html>

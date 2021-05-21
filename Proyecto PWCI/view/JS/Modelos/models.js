@@ -18,3 +18,14 @@ var Usuario = function (id,nombre,correo,contra,estudiante,avatar) {
 	this.estudiante = estudiante;
 	this.avatar = avatar;
   }
+
+  var Message = function (id,name,time,avatar,position,text) {
+
+	this.id = id;
+	this.name = name;
+	this.time = time;
+	this.avatar = avatar;
+	this.position = position;
+	this.text = text;
+	
+  }
