@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../CSS/toast.css">
   <script src="../JS/Modelos/models.js" defer></script>
   <script src="../JS/toast.js" defer></script>
+  <script src="../JS/perfilrandom.js" defer></script>
   <title>Creative Studios</title>
 </head>
 
@@ -98,6 +99,14 @@ require_once("header.php")
       </div>
     </div>
   </section>
+
+  <div class="container mt-4 mb-4">
+  <h3>Estudiantes destacados de la semana :</h3>
+  <div class="row">
+  <div class="col-4"></div>
+  <div class="col-4" id="contRan"></div>
+  <div class="col-4"></div>
+  </div></div>
 
 
   <?php

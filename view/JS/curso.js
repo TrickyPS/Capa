@@ -202,7 +202,7 @@ $("#del").html("$ " +(parseInt(data.costo) * 1.20).toFixed(2));
             $("#vid" + element.id ).append(` <a  class="list-group-item list-group-item-action" id="${'ver' + item.id}">${item.titulo}<i class="fas fa-play-circle float-right"></i></a>
             `);
             if(vars.activate){
-              $('#ver' + item.id ).append(`<a href="video.php?watch=${item.id}" class="btn btn-dark float-right mr-3" style="margin-top: -8px;"  >VER</a>`);
+              $('#ver' + item.id ).append(`<a href="Video.php?watch=${item.id}" class="btn btn-dark float-right mr-3" style="margin-top: -8px;"  >VER</a>`);
             }
           });
         }else{

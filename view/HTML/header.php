@@ -32,12 +32,10 @@ if(!isset($_SESSION["user"])){
 
 
     
-    $avatar = $_SESSION["avatar"];
+    $avatar = "../IMG/user.png";
 
  
-    if(  strlen($avatar) < 50 ){
-        $avatar =  "../IMG/user.png";
-    }
+    
 }
 ?>
 
